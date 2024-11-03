@@ -1,5 +1,5 @@
-import App from "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/app.ts";
-import LibSqlCacheService from "https://raw.githubusercontent.com/turquoze/plugins/f4e21d45858c9a93d37e9d143f3344c12173b3cb/cache/libsql.ts";
+import App from "@turquoze/turquoze";
+import LibSqlCacheService from "@turquoze/cache";
 
 const app = new App(Deno.env.get("DATABASE_URL")!, {
   sharedSecret: Deno.env.get("SHARED_SECRET")!,

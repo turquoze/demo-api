@@ -1,5 +1,9 @@
 {
   "tasks": {
-    "dev": "deno run --allow-read --env --allow-env --allow-net --watch main.ts"
+    "dev": "deno run --allow-read --env --allow-env --allow-net --allow-import --watch main.ts"
+  },
+  "imports": {
+    "@turquoze/turquoze": "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/app.ts",
+    "@turquoze/cache": "https://raw.githubusercontent.com/turquoze/plugins/f4e21d45858c9a93d37e9d143f3344c12173b3cb/cache/libsql.ts"
   }
 }

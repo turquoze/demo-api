@@ -1,656 +1,355 @@
 {
-  "version": "3",
-  "packages": {
-    "specifiers": {
-      "npm:@libsql/client": "npm:@libsql/client@0.5.3",
-      "npm:drizzle-orm@0.29.4": "npm:drizzle-orm@0.29.4_postgres@3.4.3",
-      "npm:drizzle-valibot@0.1.1": "npm:drizzle-valibot@0.1.1_drizzle-orm@0.29.4__postgres@3.4.3_postgres@3.4.3",
-      "npm:meilisearch@0.37.0": "npm:meilisearch@0.37.0",
-      "npm:postgres@3.4.3": "npm:postgres@3.4.3",
-      "npm:valibot@0.29.0": "npm:valibot@0.29.0"
+  "version": "4",
+  "specifiers": {
+    "jsr:@hono/hono@4.6.8": "4.6.8",
+    "jsr:@hono/hono@^4.6.8": "4.6.8",
+    "jsr:@valibot/valibot@~0.42.1": "0.42.1",
+    "jsr:@viki/nanoid@3": "3.0.0",
+    "npm:@libsql/client@*": "0.14.0",
+    "npm:drizzle-orm@0.36.0": "0.36.0_@libsql+client@0.14.0_postgres@3.4.5",
+    "npm:drizzle-valibot@0.2.0": "0.2.0_drizzle-orm@0.36.0__@libsql+client@0.14.0__postgres@3.4.5_valibot@0.42.1_@libsql+client@0.14.0_postgres@3.4.5",
+    "npm:meilisearch@0.45.0": "0.45.0",
+    "npm:postgres@3.4.5": "3.4.5"
+  },
+  "jsr": {
+    "@hono/hono@4.6.8": {
+      "integrity": "4c92cb895360d93b7bc637c0c3f26449761b2bb160009c0387a37a1d457850f0"
     },
-    "npm": {
-      "@libsql/client@0.5.3": {
-        "integrity": "sha512-GsOTv/Yikw8I9ZBqpxwfcDM2GDFtyZfJg7MYgWqVnNXtsqCa+tabSuRVKe34UaG2FjcOFJr9buB4vbl55geXXw==",
-        "dependencies": {
-          "@libsql/core": "@libsql/core@0.5.3",
-          "@libsql/hrana-client": "@libsql/hrana-client@0.5.6",
-          "js-base64": "js-base64@3.7.7",
-          "libsql": "libsql@0.3.8"
-        }
-      },
-      "@libsql/core@0.5.3": {
-        "integrity": "sha512-vccnRnLIeru4hacfowXDZZRxYyFWN8Z6CSs+951rH7w9JOMzwmetn5IYsXw5VcOIf0P0aLa86Uhvl1MF8jM6pA==",
-        "dependencies": {
-          "js-base64": "js-base64@3.7.7"
-        }
-      },
-      "@libsql/darwin-arm64@0.3.8": {
-        "integrity": "sha512-uh9dfDsmx0NfBjJbFm8APPD8E5s18mxmmmuH4IdSTl/xdv9URAeYo8zv9s2SHgM62QbUUcokLDzLgFfOGSsFBA==",
-        "dependencies": {}
-      },
-      "@libsql/darwin-x64@0.3.8": {
-        "integrity": "sha512-+5CSFTMs86thuUJW2emzCqrZunueR4ilUV9J1HeZgUtSiQg32/z5GdCR0027JgALqB++yhFGY4WK4SNAPWdKaA==",
-        "dependencies": {}
-      },
-      "@libsql/hrana-client@0.5.6": {
-        "integrity": "sha512-mjQoAmejZ1atG+M3YR2ZW+rg6ceBByH/S/h17ZoYZkqbWrvohFhXyz2LFxj++ARMoY9m6w3RJJIRdJdmnEUlFg==",
-        "dependencies": {
-          "@libsql/isomorphic-fetch": "@libsql/isomorphic-fetch@0.1.12",
-          "@libsql/isomorphic-ws": "@libsql/isomorphic-ws@0.1.5",
-          "js-base64": "js-base64@3.7.7",
-          "node-fetch": "node-fetch@3.3.2"
-        }
-      },
-      "@libsql/isomorphic-fetch@0.1.12": {
-        "integrity": "sha512-MRo4UcmjAGAa3ac56LoD5OE13m2p0lu0VEtZC2NZMcogM/jc5fU9YtMQ3qbPjFJ+u2BBjFZgMPkQaLS1dlMhpg==",
-        "dependencies": {
-          "@types/node-fetch": "@types/node-fetch@2.6.11",
-          "node-fetch": "node-fetch@2.7.0"
-        }
-      },
-      "@libsql/isomorphic-ws@0.1.5": {
-        "integrity": "sha512-DtLWIH29onUYR00i0GlQ3UdcTRC6EP4u9w/h9LxpUZJWRMARk6dQwZ6Jkd+QdwVpuAOrdxt18v0K2uIYR3fwFg==",
-        "dependencies": {
-          "@types/ws": "@types/ws@8.5.10",
-          "ws": "ws@8.16.0"
-        }
-      },
-      "@libsql/linux-arm64-gnu@0.3.8": {
-        "integrity": "sha512-s9blvMx2tA0HGnTHUhEtZZoBLoZqaTxVyjM4qFrxJO84GP902N/DXtbxO2ib6Jbs5rom+78DkpHmi7PzBDLCZA==",
-        "dependencies": {}
-      },
-      "@libsql/linux-arm64-musl@0.3.8": {
-        "integrity": "sha512-Gw+g5GbeAXdONzpmKVvvdIk/8cCjn0MeN8KNm59xbuwWnkA0NCz94UMD725xOoyl3z+olBxhAdE5yEznLSTcag==",
-        "dependencies": {}
-      },
-      "@libsql/linux-x64-gnu@0.3.8": {
-        "integrity": "sha512-XRpzXlbM0ZvPVB8/bhun/4dhRUt4PBo1zTz0njaWo/EQoZNGQkps1IZv7v3wR40Kcug4qvmuXTCGuYPQN4QI7w==",
-        "dependencies": {}
-      },
-      "@libsql/linux-x64-musl@0.3.8": {
-        "integrity": "sha512-gjqjqXpSBj3aB7Q2D0zgoYlquJr8WkPXaByjXE4XYNzcRRg6o+q3V3Uv9s6yhKBoLiBsltUETFJLCoQNzUv9kA==",
-        "dependencies": {}
-      },
-      "@libsql/win32-x64-msvc@0.3.8": {
-        "integrity": "sha512-KbqqgbL2iBciVFZSJ//36U0Fr6P6AAcLpJPqVckRdNOC43whZlKNglmjtzQDOq3+UVieC8OkLUPEDShRIcSDZA==",
-        "dependencies": {}
-      },
-      "@neon-rs/load@0.0.4": {
-        "integrity": "sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw==",
-        "dependencies": {}
-      },
-      "@types/node-fetch@2.6.11": {
-        "integrity": "sha512-24xFj9R5+rfQJLRyM56qh+wnVSYhyXC2tkoBndtY0U+vubqNsYXGjufB2nn8Q6gt0LrARwL6UBtMCSVCwl4B1g==",
-        "dependencies": {
-          "@types/node": "@types/node@18.16.19",
-          "form-data": "form-data@4.0.0"
-        }
-      },
-      "@types/node@18.16.19": {
-        "integrity": "sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==",
-        "dependencies": {}
-      },
-      "@types/ws@8.5.10": {
-        "integrity": "sha512-vmQSUcfalpIq0R9q7uTo2lXs6eGIpt9wtnLdMv9LVpIjCA/+ufZRozlVoVelIYixx1ugCBKDhn89vnsEGOCx9A==",
-        "dependencies": {
-          "@types/node": "@types/node@18.16.19"
-        }
-      },
-      "asynckit@0.4.0": {
-        "integrity": "sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==",
-        "dependencies": {}
-      },
-      "combined-stream@1.0.8": {
-        "integrity": "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==",
-        "dependencies": {
-          "delayed-stream": "delayed-stream@1.0.0"
-        }
-      },
-      "cross-fetch@3.1.8": {
-        "integrity": "sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==",
-        "dependencies": {
-          "node-fetch": "node-fetch@2.7.0"
-        }
-      },
-      "data-uri-to-buffer@4.0.1": {
-        "integrity": "sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==",
-        "dependencies": {}
-      },
-      "delayed-stream@1.0.0": {
-        "integrity": "sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==",
-        "dependencies": {}
-      },
-      "detect-libc@2.0.2": {
-        "integrity": "sha512-UX6sGumvvqSaXgdKGUsgZWqcUyIXZ/vZTrlRT/iobiKhGL0zL4d3osHj3uqllWJK+i+sixDS/3COVEOFbupFyw==",
-        "dependencies": {}
-      },
-      "drizzle-orm@0.29.4_postgres@3.4.3": {
-        "integrity": "sha512-ZnSM8TAxFhzH7p1s3+w3pRE/eKaOeNkH9SKitm717pubDVVcV2I0BCDBPGKV+pe02+wMfw37ntlTcCyo2rA3IA==",
-        "dependencies": {
-          "postgres": "postgres@3.4.3"
-        }
-      },
-      "drizzle-valibot@0.1.1_drizzle-orm@0.29.4__postgres@3.4.3_postgres@3.4.3": {
-        "integrity": "sha512-xVEGIbZ+Ti5IkGJP1jaUV8kQ7b5RITaH5XYYPSDVOq0blxI3y65efZ0ZAUKSo6BhZ+VqfZfZn1ouPb3pR1hA6g==",
-        "dependencies": {
-          "drizzle-orm": "drizzle-orm@0.29.4_postgres@3.4.3"
-        }
-      },
-      "fetch-blob@3.2.0": {
-        "integrity": "sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==",
-        "dependencies": {
-          "node-domexception": "node-domexception@1.0.0",
-          "web-streams-polyfill": "web-streams-polyfill@3.3.3"
-        }
-      },
-      "form-data@4.0.0": {
-        "integrity": "sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==",
-        "dependencies": {
-          "asynckit": "asynckit@0.4.0",
-          "combined-stream": "combined-stream@1.0.8",
-          "mime-types": "mime-types@2.1.35"
-        }
-      },
-      "formdata-polyfill@4.0.10": {
-        "integrity": "sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==",
-        "dependencies": {
-          "fetch-blob": "fetch-blob@3.2.0"
-        }
-      },
-      "js-base64@3.7.7": {
-        "integrity": "sha512-7rCnleh0z2CkXhH67J8K1Ytz0b2Y+yxTPL+/KOJoa20hfnVQ/3/T6W/KflYI4bRHRagNeXeU2bkNGI3v1oS/lw==",
-        "dependencies": {}
-      },
-      "libsql@0.3.8": {
-        "integrity": "sha512-tz12gCfDXl6WKwtpxpw6PaZtkecHQQQTHuuj6RLQvEfOB17bPpmo8xdC55S4J6fx6qzmqJbaLZSlA6gYJgUXkg==",
-        "dependencies": {
-          "@libsql/darwin-arm64": "@libsql/darwin-arm64@0.3.8",
-          "@libsql/darwin-x64": "@libsql/darwin-x64@0.3.8",
-          "@libsql/linux-arm64-gnu": "@libsql/linux-arm64-gnu@0.3.8",
-          "@libsql/linux-arm64-musl": "@libsql/linux-arm64-musl@0.3.8",
-          "@libsql/linux-x64-gnu": "@libsql/linux-x64-gnu@0.3.8",
-          "@libsql/linux-x64-musl": "@libsql/linux-x64-musl@0.3.8",
-          "@libsql/win32-x64-msvc": "@libsql/win32-x64-msvc@0.3.8",
-          "@neon-rs/load": "@neon-rs/load@0.0.4",
-          "detect-libc": "detect-libc@2.0.2"
-        }
-      },
-      "meilisearch@0.37.0": {
-        "integrity": "sha512-LdbK6JmRghCawrmWKJSEQF0OiE82md+YqJGE/U2JcCD8ROwlhTx0KM6NX4rQt0u0VpV0QZVG9umYiu3CSSIJAQ==",
-        "dependencies": {
-          "cross-fetch": "cross-fetch@3.1.8"
-        }
-      },
-      "mime-db@1.52.0": {
-        "integrity": "sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==",
-        "dependencies": {}
-      },
-      "mime-types@2.1.35": {
-        "integrity": "sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==",
-        "dependencies": {
-          "mime-db": "mime-db@1.52.0"
-        }
-      },
-      "node-domexception@1.0.0": {
-        "integrity": "sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==",
-        "dependencies": {}
-      },
-      "node-fetch@2.7.0": {
-        "integrity": "sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==",
-        "dependencies": {
-          "whatwg-url": "whatwg-url@5.0.0"
-        }
-      },
-      "node-fetch@3.3.2": {
-        "integrity": "sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==",
-        "dependencies": {
-          "data-uri-to-buffer": "data-uri-to-buffer@4.0.1",
-          "fetch-blob": "fetch-blob@3.2.0",
-          "formdata-polyfill": "formdata-polyfill@4.0.10"
-        }
-      },
-      "postgres@3.4.3": {
-        "integrity": "sha512-iHJn4+M9vbTdHSdDzNkC0crHq+1CUdFhx+YqCE+SqWxPjm+Zu63jq7yZborOBF64c8pc58O5uMudyL1FQcHacA==",
-        "dependencies": {}
-      },
-      "tr46@0.0.3": {
-        "integrity": "sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==",
-        "dependencies": {}
-      },
-      "valibot@0.29.0": {
-        "integrity": "sha512-JhZn08lwZPhAamOCfBwBkv/btQt4KeQhekULPH8crH053zUCLSOGEF2zKExu3bFf245tsj6J1dY0ysd/jUiMIQ==",
-        "dependencies": {}
-      },
-      "web-streams-polyfill@3.3.3": {
-        "integrity": "sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==",
-        "dependencies": {}
-      },
-      "webidl-conversions@3.0.1": {
-        "integrity": "sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==",
-        "dependencies": {}
-      },
-      "whatwg-url@5.0.0": {
-        "integrity": "sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==",
-        "dependencies": {
-          "tr46": "tr46@0.0.3",
-          "webidl-conversions": "webidl-conversions@3.0.1"
-        }
-      },
-      "ws@8.16.0": {
-        "integrity": "sha512-HS0c//TP7Ina87TfiPUz1rQzMhHrl/SG2guqRcTOIUYD2q8uhUdNHZYJUaQ8aTGPzCh+c6oawMKW35nFl1dxyQ==",
-        "dependencies": {}
-      }
+    "@valibot/valibot@0.42.1": {
+      "integrity": "ba0f6f7964aaeec0e4b1f793d575061f325ae6254cbb9d7ff01fb65068a0a23b"
+    },
+    "@viki/nanoid@3.0.0": {
+      "integrity": "a21e85c3a7bacce19becc4aa3ddfbbaf2a19435b2596198713c8422ec128ca34"
+    }
+  },
+  "npm": {
+    "@libsql/client@0.14.0": {
+      "integrity": "sha512-/9HEKfn6fwXB5aTEEoMeFh4CtG0ZzbncBb1e++OCdVpgKZ/xyMsIVYXm0w7Pv4RUel803vE6LwniB3PqD72R0Q==",
+      "dependencies": [
+        "@libsql/core",
+        "@libsql/hrana-client",
+        "js-base64",
+        "libsql",
+        "promise-limit"
+      ]
+    },
+    "@libsql/core@0.14.0": {
+      "integrity": "sha512-nhbuXf7GP3PSZgdCY2Ecj8vz187ptHlZQ0VRc751oB2C1W8jQUXKKklvt7t1LJiUTQBVJuadF628eUk+3cRi4Q==",
+      "dependencies": [
+        "js-base64"
+      ]
+    },
+    "@libsql/darwin-arm64@0.4.6": {
+      "integrity": "sha512-45i604CJ2Lubbg7NqtDodjarF6VgST8rS5R8xB++MoRqixtDns9PZ6tocT9pRJDWuTWEiy2sjthPOFWMKwYAsg=="
+    },
+    "@libsql/darwin-x64@0.4.6": {
+      "integrity": "sha512-dRKliflhfr5zOPSNgNJ6C2nZDd4YA8bTXF3MUNqNkcxQ8BffaH9uUwL9kMq89LkFIZQHcyP75bBgZctxfJ/H5Q=="
+    },
+    "@libsql/hrana-client@0.7.0": {
+      "integrity": "sha512-OF8fFQSkbL7vJY9rfuegK1R7sPgQ6kFMkDamiEccNUvieQ+3urzfDFI616oPl8V7T9zRmnTkSjMOImYCAVRVuw==",
+      "dependencies": [
+        "@libsql/isomorphic-fetch",
+        "@libsql/isomorphic-ws",
+        "js-base64",
+        "node-fetch"
+      ]
+    },
+    "@libsql/isomorphic-fetch@0.3.1": {
+      "integrity": "sha512-6kK3SUK5Uu56zPq/Las620n5aS9xJq+jMBcNSOmjhNf/MUvdyji4vrMTqD7ptY7/4/CAVEAYDeotUz60LNQHtw=="
+    },
+    "@libsql/isomorphic-ws@0.1.5": {
+      "integrity": "sha512-DtLWIH29onUYR00i0GlQ3UdcTRC6EP4u9w/h9LxpUZJWRMARk6dQwZ6Jkd+QdwVpuAOrdxt18v0K2uIYR3fwFg==",
+      "dependencies": [
+        "@types/ws",
+        "ws"
+      ]
+    },
+    "@libsql/linux-arm64-gnu@0.4.6": {
+      "integrity": "sha512-DMPavVyY6vYPAYcQR1iOotHszg+5xSjHSg6F9kNecPX0KKdGq84zuPJmORfKOPtaWvzPewNFdML/e+s1fu09XQ=="
+    },
+    "@libsql/linux-arm64-musl@0.4.6": {
+      "integrity": "sha512-whuHSYAZyclGjM3L0mKGXyWqdAy7qYvPPn+J1ve7FtGkFlM0DiIPjA5K30aWSGJSRh72sD9DBZfnu8CpfSjT6w=="
+    },
+    "@libsql/linux-x64-gnu@0.4.6": {
+      "integrity": "sha512-0ggx+5RwEbYabIlDBBAvavdfIJCZ757u6nDZtBeQIhzW99EKbWG3lvkXHM3qudFb/pDWSUY4RFBm6vVtF1cJGA=="
+    },
+    "@libsql/linux-x64-musl@0.4.6": {
+      "integrity": "sha512-SWNrv7Hz72QWlbM/ZsbL35MPopZavqCUmQz2HNDZ55t0F+kt8pXuP+bbI2KvmaQ7wdsoqAA4qBmjol0+bh4ndw=="
+    },
+    "@libsql/win32-x64-msvc@0.4.6": {
+      "integrity": "sha512-Q0axn110zDNELfkEog3Nl8p9BU4eI/UvgaHevGyOiSDN7s0KPfj0j6jwVHk4oz3o/d/Gg3DRIxomZ4ftfTOy/g=="
+    },
+    "@neon-rs/load@0.0.4": {
+      "integrity": "sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw=="
+    },
+    "@types/node@22.5.4": {
+      "integrity": "sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==",
+      "dependencies": [
+        "undici-types"
+      ]
+    },
+    "@types/ws@8.5.12": {
+      "integrity": "sha512-3tPRkv1EtkDpzlgyKyI8pGsGZAGPEaXeu0DOj5DI25Ja91bdAYddYHbADRYVrZMRbfW+1l5YwXVDKohDJNQxkQ==",
+      "dependencies": [
+        "@types/node"
+      ]
+    },
+    "data-uri-to-buffer@4.0.1": {
+      "integrity": "sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A=="
+    },
+    "detect-libc@2.0.2": {
+      "integrity": "sha512-UX6sGumvvqSaXgdKGUsgZWqcUyIXZ/vZTrlRT/iobiKhGL0zL4d3osHj3uqllWJK+i+sixDS/3COVEOFbupFyw=="
+    },
+    "drizzle-orm@0.36.0_@libsql+client@0.14.0_postgres@3.4.5": {
+      "integrity": "sha512-6BETYPdKSR7cDHC0ZfqZk2VrKJ8n/Rfd3ajFPsAbc69gi87nwZ6oBA2wUGMELHA0tQE4kUKN0Ds00LUZQ6Z69A==",
+      "dependencies": [
+        "@libsql/client",
+        "postgres"
+      ]
+    },
+    "drizzle-valibot@0.2.0_drizzle-orm@0.36.0__@libsql+client@0.14.0__postgres@3.4.5_valibot@0.42.1_@libsql+client@0.14.0_postgres@3.4.5": {
+      "integrity": "sha512-+JTZZN52fFv20kGTXI1KGpysdCiedaTDpWQ6lqnxX2DD5U5tJfGPB2ROjHFjbLzK4XiH98MOhKZf174orBQAew==",
+      "dependencies": [
+        "drizzle-orm",
+        "valibot"
+      ]
+    },
+    "fetch-blob@3.2.0": {
+      "integrity": "sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==",
+      "dependencies": [
+        "node-domexception",
+        "web-streams-polyfill"
+      ]
+    },
+    "formdata-polyfill@4.0.10": {
+      "integrity": "sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==",
+      "dependencies": [
+        "fetch-blob"
+      ]
+    },
+    "js-base64@3.7.7": {
+      "integrity": "sha512-7rCnleh0z2CkXhH67J8K1Ytz0b2Y+yxTPL+/KOJoa20hfnVQ/3/T6W/KflYI4bRHRagNeXeU2bkNGI3v1oS/lw=="
+    },
+    "libsql@0.4.6": {
+      "integrity": "sha512-F5M+ltteK6dCcpjMahrkgT96uFJvVI8aQ4r9f2AzHQjC7BkAYtvfMSTWGvRBezRgMUIU2h1Sy0pF9nOGOD5iyA==",
+      "dependencies": [
+        "@libsql/darwin-arm64",
+        "@libsql/darwin-x64",
+        "@libsql/linux-arm64-gnu",
+        "@libsql/linux-arm64-musl",
+        "@libsql/linux-x64-gnu",
+        "@libsql/linux-x64-musl",
+        "@libsql/win32-x64-msvc",
+        "@neon-rs/load",
+        "detect-libc"
+      ]
+    },
+    "meilisearch@0.45.0": {
+      "integrity": "sha512-+zCzEqE+CumY4icB0Vox180adZqaNtnr60hJWGiEdmol5eWmksfY8rYsTcz87styXC2ZOg+2yF56gdH6oyIBTA=="
+    },
+    "node-domexception@1.0.0": {
+      "integrity": "sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ=="
+    },
+    "node-fetch@3.3.2": {
+      "integrity": "sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==",
+      "dependencies": [
+        "data-uri-to-buffer",
+        "fetch-blob",
+        "formdata-polyfill"
+      ]
+    },
+    "postgres@3.4.5": {
+      "integrity": "sha512-cDWgoah1Gez9rN3H4165peY9qfpEo+SA61oQv65O3cRUE1pOEoJWwddwcqKE8XZYjbblOJlYDlLV4h67HrEVDg=="
+    },
+    "promise-limit@2.7.0": {
+      "integrity": "sha512-7nJ6v5lnJsXwGprnGXga4wx6d1POjvi5Qmf1ivTRxTjH4Z/9Czja/UCMLVmB9N93GeWOU93XaFaEt6jbuoagNw=="
+    },
+    "undici-types@6.19.8": {
+      "integrity": "sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw=="
+    },
+    "valibot@0.42.1": {
+      "integrity": "sha512-3keXV29Ar5b//Hqi4MbSdV7lfVp6zuYLZuA9V1PvQUsXqogr+u5lvLPLk3A4f74VUXDnf/JfWMN6sB+koJ/FFw=="
+    },
+    "web-streams-polyfill@3.3.3": {
+      "integrity": "sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw=="
+    },
+    "ws@8.18.0": {
+      "integrity": "sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw=="
     }
   },
   "remote": {
     "https://cdn.skypack.dev/-/dinero.js@v1.9.1-cOF4QnfwVEqXTHBzepvA/dist=es2019,mode=imports/optimized/dinerojs.js": "28047b329cf87dc27e8ceb7d0b362a9e319386b5752f229421871862677d91af",
     "https://cdn.skypack.dev/dinero.js@1.9.1": "00106c51a22b91ee10a88391021db0bb26f81bdd27d3b568ca9067486c33a8cd",
-    "https://deno.land/x/hono@v4.0.10/adapter/deno/ssg.ts": "49d73dd0d351fc52a54bfc8094096aff957f5a955a3eb976844ed8d88903bc0f",
-    "https://deno.land/x/hono@v4.0.10/client/client.ts": "9aa632e0df3bb1e10081a29577117c92b65f27252c56d2474ddba2113f584848",
-    "https://deno.land/x/hono@v4.0.10/client/index.ts": "30def535310a37bede261f1b23d11a9758983b8e9d60a6c56309cee5f6746ab2",
-    "https://deno.land/x/hono@v4.0.10/client/utils.ts": "b61b11614aa976e4b6f829642528bd78bf8d19a72aa57426e40eb21507a69c0a",
-    "https://deno.land/x/hono@v4.0.10/compose.ts": "37d6e33b7db80e4c43a0629b12fd3a1e3406e7d9e62a4bfad4b30426ea7ae4f1",
-    "https://deno.land/x/hono@v4.0.10/context.ts": "2c6b270ca580a46335d04bb5aac39ac13d00e7e4910f54deba446c0a93f0401f",
-    "https://deno.land/x/hono@v4.0.10/helper.ts": "a8df0b65838177e7e0ab30fc496cde22c9b6aab237725797b1bdec332971470b",
-    "https://deno.land/x/hono@v4.0.10/helper/accepts/accepts.ts": "46330f2ff384b266ab2227f7943366c09d752c9b58e2908e7b7726548e8954d3",
-    "https://deno.land/x/hono@v4.0.10/helper/accepts/index.ts": "88a18cb5f7b15ec2bd515b6fbf5a2a8b5f77d1edbd6f7e1632afe5d755b2cf50",
-    "https://deno.land/x/hono@v4.0.10/helper/adapter/index.ts": "5a4ca736487a2a8303bdac9fff710eae38e6f39ed70eb171eed78e5f64da84df",
-    "https://deno.land/x/hono@v4.0.10/helper/cookie/index.ts": "9adc57af5723f16d52ec1162838ac3c77dc2c8b9e216762e7c68106c7468cc77",
-    "https://deno.land/x/hono@v4.0.10/helper/css/common.ts": "596f3e777c11a73be52585c2140e80f8ad87f1ef3c483514480e11fb7394e986",
-    "https://deno.land/x/hono@v4.0.10/helper/css/index.ts": "f91b6c473f033c420077554bcc8c11635194e3ee49c974c22bbacf2b3449b63c",
-    "https://deno.land/x/hono@v4.0.10/helper/dev/index.ts": "39309b1ea098feaf03dd564ad23290d11e0aa495f3dd64400b3affcf79937f72",
-    "https://deno.land/x/hono@v4.0.10/helper/factory/index.ts": "da87032bd93785827448e5d1369c90f6d453cdd12ded597d4ca4051e3309e468",
-    "https://deno.land/x/hono@v4.0.10/helper/html/index.ts": "48a0ddc576c10452db6c3cab03dd4ee6986ab61ebdc667335b40a81fa0487f69",
-    "https://deno.land/x/hono@v4.0.10/helper/ssg/index.ts": "fa28f063dbd63a3ac165460d82e1e73ec38134727fef0491d207321d94d924a4",
-    "https://deno.land/x/hono@v4.0.10/helper/ssg/utils.ts": "90ff5f2f9a57e7cf2f76362ce0b2179677f46390ddf0cce0f5c2023db179d847",
-    "https://deno.land/x/hono@v4.0.10/helper/streaming/index.ts": "e4955c04cb5fe4d65abec256ff3f598c87958a1cfd9eece1d6de1b56d16c7723",
-    "https://deno.land/x/hono@v4.0.10/helper/streaming/sse.ts": "4970dcac34f628f101bb603d4499c34e3f2b122e5e0568379164ea61d0007424",
-    "https://deno.land/x/hono@v4.0.10/helper/streaming/stream.ts": "a0eeb52395313ecb293edd1294dc21538b024ce1acc4745671f9f1548825cba2",
-    "https://deno.land/x/hono@v4.0.10/helper/streaming/text.ts": "bd8d1973feeabca63016cf638309aaeb829a914bf139a26120ca5c85e2b4ce96",
-    "https://deno.land/x/hono@v4.0.10/helper/testing/index.ts": "bc49c049aa0d6426417e3d1a2f52a471a09edb1fb8610b7545eae1968e7d7874",
-    "https://deno.land/x/hono@v4.0.10/hono-base.ts": "d3323a4668796cd56b9061ad34f2fa12a3c52178890cfffe27bd077e263c0ab7",
-    "https://deno.land/x/hono@v4.0.10/hono.ts": "23edd0140bf0bd5a68c14ae96e5856a5cec6b844277e853b91025e91ea74f416",
-    "https://deno.land/x/hono@v4.0.10/http-exception.ts": "0dc357bbf1510f59cdfc35aad569df97e5652f7406f0693437fe140383d8d9c0",
-    "https://deno.land/x/hono@v4.0.10/jsx/constants.ts": "03dbf805f4d07e3b34ab05ac84f3c0cb4fbafb2096fba7789a5f6226ca6f21ad",
-    "https://deno.land/x/hono@v4.0.10/jsx/dom/css.ts": "476699080c11fa16230e3fd59b6faf551e5d771c2998b4bf03368b3bc1f5a0e0",
-    "https://deno.land/x/hono@v4.0.10/mod.ts": "90114a97be9111b348129ad0143e764a64921f60dd03b8f3da529db98a0d3a82",
-    "https://deno.land/x/hono@v4.0.10/request.ts": "9c8061eaf4373aa122a77d1aa8e888397425bc5d78bc17c87a2c861375c4f0b3",
-    "https://deno.land/x/hono@v4.0.10/router.ts": "880316f561918fc197481755aac2165fdbe2f530b925c5357a9f98d6e2cc85c7",
-    "https://deno.land/x/hono@v4.0.10/router/linear-router/index.ts": "8a2a7144c50b1f4a92d9ee99c2c396716af144c868e10608255f969695efccd0",
-    "https://deno.land/x/hono@v4.0.10/router/linear-router/router.ts": "9f8b82c2ba63aebafa58e2e0256490d34d254ebbe8a57ca9ce3ba23709bece3a",
-    "https://deno.land/x/hono@v4.0.10/router/pattern-router/index.ts": "304a66c50e243872037ed41c7dd79ed0c89d815e17e172e7ad7cdc4bc07d3383",
-    "https://deno.land/x/hono@v4.0.10/router/pattern-router/router.ts": "e42b3c45545da9120f4ac9cb333eed6f230ed5cee3fa52949d2c577a37517046",
-    "https://deno.land/x/hono@v4.0.10/router/reg-exp-router/index.ts": "52755829213941756159b7a963097bafde5cc4fc22b13b1c7c9184dc0512d1db",
-    "https://deno.land/x/hono@v4.0.10/router/reg-exp-router/node.ts": "5b3fb80411db04c65df066e69fedb2c8c0844753c2633d703336de84d569252c",
-    "https://deno.land/x/hono@v4.0.10/router/reg-exp-router/router.ts": "558ab9c2d2d10d4023d80026fd976a17b56dc853df7f1acd171b78c00507ce11",
-    "https://deno.land/x/hono@v4.0.10/router/reg-exp-router/trie.ts": "852ce7207e6701e47fa30889a0d2b8bfcd56d8862c97e7bc9831e0a64bd8835f",
-    "https://deno.land/x/hono@v4.0.10/router/smart-router/index.ts": "74f9b4fe15ea535900f2b9b048581915f12fe94e531dd2b0032f5610e61c3bef",
-    "https://deno.land/x/hono@v4.0.10/router/smart-router/router.ts": "f1848a2a1eefa316a11853ae12e749552747771fb8a11fe713ae04ea6461140b",
-    "https://deno.land/x/hono@v4.0.10/router/trie-router/index.ts": "3eb75e7f71ba81801631b30de6b1f5cefb2c7239c03797e2b2cbab5085911b41",
-    "https://deno.land/x/hono@v4.0.10/router/trie-router/node.ts": "04d2eac912cc367b95545ce10d889134fc37be74ca729a7f0772970f37b29d11",
-    "https://deno.land/x/hono@v4.0.10/router/trie-router/router.ts": "54ced78d35676302c8fcdda4204f7bdf5a7cc907fbf9967c75674b1e394f830d",
-    "https://deno.land/x/hono@v4.0.10/utils/body.ts": "1c7013f83bbef8216b3d862111efd5a183eaa29e86decf9a7eec6cdf25757e93",
-    "https://deno.land/x/hono@v4.0.10/utils/buffer.ts": "9066a973e64498cb262c7e932f47eed525a51677b17f90893862b7279dc0773e",
-    "https://deno.land/x/hono@v4.0.10/utils/cookie.ts": "a8d61878bc6eb338d17758e2b5b47512ac1ced8d824fd4ff7b637b091cc7b28f",
-    "https://deno.land/x/hono@v4.0.10/utils/crypto.ts": "bda0e141bbe46d3a4a20f8fbcb6380d473b617123d9fdfa93e4499410b537acc",
-    "https://deno.land/x/hono@v4.0.10/utils/handler.ts": "2940f60d3fdae3df1ebde7f88c0f703c64bb1311c2c0a60f97e80a57b5690393",
-    "https://deno.land/x/hono@v4.0.10/utils/html.ts": "6ea4f6bf41587a51607dff7a6d2865ef4d5001e4203b07e5c8a45b63a098e871",
-    "https://deno.land/x/hono@v4.0.10/utils/mime.ts": "1e5db0919d2127995ec466dfd1ee637c3d63084f516ccbd3c6906ccf0d3f3c46",
-    "https://deno.land/x/hono@v4.0.10/utils/stream.ts": "491bebbc8cff49eddef05bca2e2d7b7c6d31c8444fdef60ae8a0373df293e6ae",
-    "https://deno.land/x/hono@v4.0.10/utils/url.ts": "d9d307a495e7dfc6e916fbcfa74c2d8d23e8e685bddc5e6ebc9c0f784345a01a",
-    "https://deno.land/x/hono@v4.0.10/validator/index.ts": "6c986e8b91dcf857ecc8164a506ae8eea8665792a4ff7215471df669c632ae7c",
-    "https://deno.land/x/hono@v4.0.10/validator/validator.ts": "d80db93f84bce6406feac5d157cb97ee69242498d0dbec4568cb5df1a844bf0f",
-    "https://deno.land/x/jose@v5.2.2/index.ts": "1c955404289ff08dc03d31fc8ce3186ffeaae9ac0fdcf3f128f047ce770bf559",
-    "https://deno.land/x/jose@v5.2.2/jwe/compact/decrypt.ts": "2d32f0b41e1cc4f428b6dcae1c8931fae9756d7ece45d9e870c558ed1ab27bc8",
-    "https://deno.land/x/jose@v5.2.2/jwe/compact/encrypt.ts": "d147705bc7e2675cfb546f78676ec91f432c93ff28022f7125a71d72454bec90",
-    "https://deno.land/x/jose@v5.2.2/jwe/flattened/decrypt.ts": "3393ab6561e532c8a3d472c5174c7b7c630cc36f06560cc71d6b7a0b69371825",
-    "https://deno.land/x/jose@v5.2.2/jwe/flattened/encrypt.ts": "f45b40e05882055e242afa3f157775bac1c50ac6299b26a3158f32f399542a6e",
-    "https://deno.land/x/jose@v5.2.2/jwe/general/decrypt.ts": "f9c702cbc7d380b8f314bd001f5ac339b1505754c0d22348135fe05ff98306bf",
-    "https://deno.land/x/jose@v5.2.2/jwe/general/encrypt.ts": "760901c766461a4256dbcc7691354a1a66519c82c87615c01c2e49660207c040",
-    "https://deno.land/x/jose@v5.2.2/jwk/embedded.ts": "eaa14282f8e0cf757ed3d26a2d278e1bc15a178954e86fc601719be8f32abd74",
-    "https://deno.land/x/jose@v5.2.2/jwk/thumbprint.ts": "dddb12cfccb323b1d49e56ac8250bcaa3740d632376dc58ebb16491e3e574e3d",
-    "https://deno.land/x/jose@v5.2.2/jwks/local.ts": "cb166cf207631f38b31f217491d19e9ceaa01abdba947452170c0f781730796e",
-    "https://deno.land/x/jose@v5.2.2/jwks/remote.ts": "646952cbe95880a575b928f12268684767b520555ee0e027d0b9c6e086a2b2aa",
-    "https://deno.land/x/jose@v5.2.2/jws/compact/sign.ts": "1e88d19dc26d3ea5f2ce3da989813daf5c555d8dec6528051530f7b5a3e87bae",
-    "https://deno.land/x/jose@v5.2.2/jws/compact/verify.ts": "ec53206a9b8732117a93b928acb134a13abdd7803dd09835b597867678107426",
-    "https://deno.land/x/jose@v5.2.2/jws/flattened/sign.ts": "0ccf19562026e0678b0e62c0788b375b443b597986cd0c84f1929cdb2bd1048d",
-    "https://deno.land/x/jose@v5.2.2/jws/flattened/verify.ts": "cdd8ede7d302cd0411983305fa5186f76119b6dd50a85fcfac19a0e1a9ec1796",
-    "https://deno.land/x/jose@v5.2.2/jws/general/sign.ts": "b40b40ce59f12dc58d30a553cb865821d8c2487513c144f608163e847d5a5375",
-    "https://deno.land/x/jose@v5.2.2/jws/general/verify.ts": "46043b2c4e2829e88d889a434f4dd3cab4d9865b324abc3b02a61cb738e59d74",
-    "https://deno.land/x/jose@v5.2.2/jwt/decrypt.ts": "2d541db2380760634bf20e8dfacabbf97aa5f80eb77735400c9e43cfe397234c",
-    "https://deno.land/x/jose@v5.2.2/jwt/encrypt.ts": "b9a6de7c7ac4797d2f97f47481538752e0623e40c99cc98056cc2ae957129875",
-    "https://deno.land/x/jose@v5.2.2/jwt/produce.ts": "c1f66aedfa626e81d34ab44330d580cbfe4588f57a6ff7669b986d909fae02aa",
-    "https://deno.land/x/jose@v5.2.2/jwt/sign.ts": "54d0a761056edeec428a956abd8db034a20536d87fc7b7a2d4fbf953e931aa37",
-    "https://deno.land/x/jose@v5.2.2/jwt/unsecured.ts": "6d930c64c05477b1e9c95219f766816698b9a099213270f6d8059af414767aca",
-    "https://deno.land/x/jose@v5.2.2/jwt/verify.ts": "905cb1f2ca01157a9f38e5dfd3495306e348b9ca84e70c359d4731afcec19a64",
-    "https://deno.land/x/jose@v5.2.2/key/export.ts": "5addf06a10ce16bb24e630a8f0e5473eff2cbc1ac549ba29fd8ecf0610778edc",
-    "https://deno.land/x/jose@v5.2.2/key/generate_key_pair.ts": "6ef50b33427eab5c895189774b562e61c7195609d5701a8e5b0357181a8062e4",
-    "https://deno.land/x/jose@v5.2.2/key/generate_secret.ts": "3f87f5df76b8d05613e134660297285bece39a40b10640b7cf66417cfcaee32f",
-    "https://deno.land/x/jose@v5.2.2/key/import.ts": "697efbc4621f1707784bbba6e204145c6756536bdad13851226faff6f40a155c",
-    "https://deno.land/x/jose@v5.2.2/lib/aesgcmkw.ts": "9415c556597be41a4a2f7203fd32fb00d1f06b6b2cfef70d481acec39c7807d6",
-    "https://deno.land/x/jose@v5.2.2/lib/buffer_utils.ts": "0b64941bf694bc810b2c917b61474be46c54854da76bb42b20f1642102542ff1",
-    "https://deno.land/x/jose@v5.2.2/lib/cek.ts": "a474becfe1c2d86fbcf3a24cdcd96274beb8d61bd17926e5f345001f39df922b",
-    "https://deno.land/x/jose@v5.2.2/lib/check_iv_length.ts": "118eb531167126c8421d71a21f2cfdc10a658c933e178b33395ef3e962c54f80",
-    "https://deno.land/x/jose@v5.2.2/lib/check_key_type.ts": "81f5a2c3764464d2b917a1c55c6011d312184e8c68e43bee51565c2db1b166c4",
-    "https://deno.land/x/jose@v5.2.2/lib/check_p2s.ts": "2f5549e121c43019ac85a3bb3fe8cb98a397122dcaa80f3cd8bf5fcf314e1f67",
-    "https://deno.land/x/jose@v5.2.2/lib/crypto_key.ts": "b75ba81390a90ea741cf174117d96e7851b221ebd9b0dfb806061175c24aed4f",
-    "https://deno.land/x/jose@v5.2.2/lib/decrypt_key_management.ts": "9551fc03b4952c7771e76aec46b568f28c34950811d86eb13893eb565946ddf6",
-    "https://deno.land/x/jose@v5.2.2/lib/encrypt_key_management.ts": "ec08f264e7dde341171d6272e9db639ae3718cc7047b3117735ab960d9bd01d4",
-    "https://deno.land/x/jose@v5.2.2/lib/epoch.ts": "cd608f73f6c100e8156c6020ec2bce6757e01759793f0d6aab23908d3d2ea933",
-    "https://deno.land/x/jose@v5.2.2/lib/format_pem.ts": "b5230682e7a89609238015b77f33afd248f3e0f69bcb5895eece2f86d83100f6",
-    "https://deno.land/x/jose@v5.2.2/lib/invalid_key_input.ts": "55cebdd0eaf3f2bc3c9a2a814bef94e7fc72ed58faafaad8d6c2e4b759139427",
-    "https://deno.land/x/jose@v5.2.2/lib/is_disjoint.ts": "b5ea1cb260899f5cfb04f032029956e637067714a275d13be429fc53287a4b17",
-    "https://deno.land/x/jose@v5.2.2/lib/is_object.ts": "43549ddc51a3b3d4c22b953b191a961fbb61fb5081e8efb88ad075afa1f4d214",
-    "https://deno.land/x/jose@v5.2.2/lib/iv.ts": "4766d9ad87b478bb7344094f38c8561181b72f8678edd1b5226d1e0f9ab677fc",
-    "https://deno.land/x/jose@v5.2.2/lib/jwt_claims_set.ts": "927514104e4572604a7a00b6c32cdff5cee19423483d9a495a97195136aa4f96",
-    "https://deno.land/x/jose@v5.2.2/lib/secs.ts": "40e09916007b3a393f20265ea84dc1df43974e86ec796ce0e5e6724f5917a2b8",
-    "https://deno.land/x/jose@v5.2.2/lib/validate_algorithms.ts": "6b20f4b5f6935cd9edcd6eb2128226144ba792eaa7c47966c666a51baf1682eb",
-    "https://deno.land/x/jose@v5.2.2/lib/validate_crit.ts": "22b8ad98e6b4f1b69c5433aed7bb817fd7f40df8e4a72558955c1ec90092a261",
-    "https://deno.land/x/jose@v5.2.2/runtime/aeskw.ts": "a9bd412c6d07b2606520972671a545cdb205f79f0a2e9ec0fb145fb2147319e1",
-    "https://deno.land/x/jose@v5.2.2/runtime/asn1.ts": "013a633b824c18663c8c7f7ec8691bfe3dfef82ee58650de0c6d8ee26154bb6a",
-    "https://deno.land/x/jose@v5.2.2/runtime/base64url.ts": "74ecb18b90de56bcc4424b6c911cfe49b56dd4a316978f5c8ee9a23560069636",
-    "https://deno.land/x/jose@v5.2.2/runtime/bogus.ts": "4f1c967b0d9b4e7105e16ad8c173da55708f377ee5e201d8ee5fc613f3417f08",
-    "https://deno.land/x/jose@v5.2.2/runtime/check_cek_length.ts": "2ee093fcb273602449ed7863ab6bd4dd2a7aeff99507e0573e3cd4b8d8099e5d",
-    "https://deno.land/x/jose@v5.2.2/runtime/check_key_length.ts": "5656870cc4460602775134280bf46f17e27100b237bdb5c687aceabeffc8f2a2",
-    "https://deno.land/x/jose@v5.2.2/runtime/decrypt.ts": "c53c80b90892b45f39d58e75a46f53032b131f2d9f5b6b74ddd215c79ca3ed8b",
-    "https://deno.land/x/jose@v5.2.2/runtime/digest.ts": "cee73fad56ce596ffedc56811d174ab413e7981eb847eb67c0e77f213cc2ac2d",
-    "https://deno.land/x/jose@v5.2.2/runtime/ecdhes.ts": "74a6f43dde87736179d814312b010087bea0c834f51adc9a93f79664f78cb75f",
-    "https://deno.land/x/jose@v5.2.2/runtime/encrypt.ts": "50d400ab152e2d66bffccf7473545097dd69894bc05508530260c8bc0d811638",
-    "https://deno.land/x/jose@v5.2.2/runtime/fetch_jwks.ts": "34b71aa6bbd51984d1009792499ea17133dcb11bf2f2d8fba60e8090d900fc20",
-    "https://deno.land/x/jose@v5.2.2/runtime/generate.ts": "12473775d22140aa6ec9697a5b83cfb63581831f435b005577613b0ecaf33774",
-    "https://deno.land/x/jose@v5.2.2/runtime/get_sign_verify_key.ts": "f08a086524491a54fb2a0e203819d4ca2b193444aecf6dfbaf6d400431cb439c",
-    "https://deno.land/x/jose@v5.2.2/runtime/is_key_like.ts": "d9660a40820d254843721a53b51eb94a4db39a1ee36103ea8c28e2cc2207599b",
-    "https://deno.land/x/jose@v5.2.2/runtime/jwk_to_key.ts": "ec0ce6cbbe2e91ee666d7c1cb8e42751dc56a79af3d8183b715874d24f489b4d",
-    "https://deno.land/x/jose@v5.2.2/runtime/key_to_jwk.ts": "2af6f52abbe59316fa96771da48538c8f718b6fdd8703d185f8a87ef44c0f064",
-    "https://deno.land/x/jose@v5.2.2/runtime/pbes2kw.ts": "ad084eb8dd144df8fd5d7e0b824806e35475398be0d3871c2016c3c467e24b19",
-    "https://deno.land/x/jose@v5.2.2/runtime/random.ts": "3e9c8d08208e5dc186ae659535f0018303ff3b56615335bf0dfb5904fe36aab7",
-    "https://deno.land/x/jose@v5.2.2/runtime/rsaes.ts": "124b6e87d8569b39d6f550b371303c79e9eb28aa0d9b14025eeaffe50282c987",
-    "https://deno.land/x/jose@v5.2.2/runtime/runtime.ts": "d748ecb0c1b57020d6f6c41b4458cce74b4d15ab919c38a0ec32d12cee7f5976",
-    "https://deno.land/x/jose@v5.2.2/runtime/sign.ts": "1524f8855538ca5fd607cd681f804ba421b0ec58f562118f3c635324ba053f90",
-    "https://deno.land/x/jose@v5.2.2/runtime/subtle_dsa.ts": "bab28945afd1aac19d3142a70f0c44c4b283b581d33cf8e1234889b58338e80d",
-    "https://deno.land/x/jose@v5.2.2/runtime/subtle_rsaes.ts": "26147da83932ebf7266d69ddd408f269395de05ddde64ba4e1585571bb61bd93",
-    "https://deno.land/x/jose@v5.2.2/runtime/timing_safe_equal.ts": "fc5b3f4132cec56630eac4677fef2b519707a9c6a257f8ae86515b0d86ff5f6b",
-    "https://deno.land/x/jose@v5.2.2/runtime/verify.ts": "d391e2286b47485247b475016c66999f5146a1cf8331115385a9ba629251c15e",
-    "https://deno.land/x/jose@v5.2.2/runtime/webcrypto.ts": "3365b7d62eaa7e6befe5e2f4f67aa7859805c41b87064433b6e70f94501aa36e",
-    "https://deno.land/x/jose@v5.2.2/util/base64url.ts": "d2567042684de8bf1e4f1ad67be40ab343ee192ddf1cf12ff1d940d6c1fa2bcb",
-    "https://deno.land/x/jose@v5.2.2/util/decode_jwt.ts": "a7ea5eaf0a2fb99252eda082e9d25bc47181962fb42806b28a12723197bc7814",
-    "https://deno.land/x/jose@v5.2.2/util/decode_protected_header.ts": "546eac15dd97d267373cb3d8d9a94ad03481f1328c4457560ffde9a5a595ebe8",
-    "https://deno.land/x/jose@v5.2.2/util/errors.ts": "ca227b0dfbc2464bd0940969d2fbffcb80803d25b1dba6385dfe486e2aa0a089",
-    "https://deno.land/x/jose@v5.2.2/util/runtime.ts": "088cae7df0d285065f141d880c5c21a572234997082337d1125d7f1603059642",
-    "https://deno.land/x/nanoid@v3.0.0/customAlphabet.ts": "1cfd7cfd2f07ca8d78a7e7855fcc9f59abf01ef2a127484ef94328fadf940ead",
-    "https://deno.land/x/nanoid@v3.0.0/customRandom.ts": "af56e19038c891a4b4ef2be931554c27579bd407ee5bbea5cb64f6ee1347cbe3",
-    "https://deno.land/x/nanoid@v3.0.0/mod.ts": "3ead610e40c58d8fdca21d5da9ec661445a2b82526e19c34d05de5f90be8a1be",
-    "https://deno.land/x/nanoid@v3.0.0/nanoid.ts": "8d119bc89a0f34e7bbe0c2dbdc280d01753e431af553d189663492310a31085d",
-    "https://deno.land/x/nanoid@v3.0.0/random.ts": "4da71d5f72f2bfcc6a4ee79b5d4e72f48dcf4fe4c3835fd5ebab08b9f33cd598",
-    "https://deno.land/x/nanoid@v3.0.0/urlAlphabet.ts": "8b1511deb1ecb23c66202b6000dc10fb68f9a96b5550c6c8cef5009324793431",
+    "https://deno.land/x/jose@v5.9.6/index.ts": "e6e894e8c2b3a11c4071ee1008eb7d85a373ff68b5fbe5d7791d7384cfdee523",
+    "https://deno.land/x/jose@v5.9.6/jwe/compact/decrypt.ts": "43c80cb2dd0545df1b0aed37b710e0c02cd58781236eb0426fa2dd65bf250d8f",
+    "https://deno.land/x/jose@v5.9.6/jwe/compact/encrypt.ts": "b3be13ddddea2ea638cf188cbe1c1572085edd84f7d657cdd488dbba7c2a86c7",
+    "https://deno.land/x/jose@v5.9.6/jwe/flattened/decrypt.ts": "69ac436e2880b0cf03dfcddb38f24b862cab568c900fd5ec965561ae9aa3224d",
+    "https://deno.land/x/jose@v5.9.6/jwe/flattened/encrypt.ts": "0f2b4245b3fec9f7b55748f8b7d430d397aecb4884a858f0d5ce618a8d601e31",
+    "https://deno.land/x/jose@v5.9.6/jwe/general/decrypt.ts": "115e034ffffa542dc4bc361f33cc1550a5d3d1c301d02c9785b2410c5008c40e",
+    "https://deno.land/x/jose@v5.9.6/jwe/general/encrypt.ts": "40efbe7f473f21933eba57aba133ab16df8e153d96946b6ede62572146970cd4",
+    "https://deno.land/x/jose@v5.9.6/jwk/embedded.ts": "9235337249f10a04a046a02897e0db4be8244fc731ac0638f4ad5c091280b58c",
+    "https://deno.land/x/jose@v5.9.6/jwk/thumbprint.ts": "362b6d36a716f569ac3f6a97bb41a7fb3265f971d5563f05cca73ce03432e42a",
+    "https://deno.land/x/jose@v5.9.6/jwks/local.ts": "2a948310bc9c534c3c044d52f8cf015fc7075bf8e7e845950fa578bd77d51f2e",
+    "https://deno.land/x/jose@v5.9.6/jwks/remote.ts": "948c451ebde9978628a7f6e543ef0827584ee2b434d1360d6964776f41be3094",
+    "https://deno.land/x/jose@v5.9.6/jws/compact/sign.ts": "112b4904316458c7d8cfef48309eefe977b9720d061f81477a7c72247a4f8821",
+    "https://deno.land/x/jose@v5.9.6/jws/compact/verify.ts": "37cdbe53267550b236344e4e7d7bf1dfd94fd1887fd785110d4cf88a4aa93408",
+    "https://deno.land/x/jose@v5.9.6/jws/flattened/sign.ts": "bbdeafd7d00873ad032a9136e770897ab202cce5ed5cef249470a2faf4ad0fe4",
+    "https://deno.land/x/jose@v5.9.6/jws/flattened/verify.ts": "4f4124773f97c6a0ddf7f84d5a28e0c39e10daf033ddd9c7287891c2403e2484",
+    "https://deno.land/x/jose@v5.9.6/jws/general/sign.ts": "5b977a752ea0261af76608aad8fbcc7ccc9302c62aae8da9dbfead3080ae4515",
+    "https://deno.land/x/jose@v5.9.6/jws/general/verify.ts": "134aeb53aa8e6fdbf1cb38a6cc2f4d40eafa3ea5e465d05ea250c24e3b190922",
+    "https://deno.land/x/jose@v5.9.6/jwt/decrypt.ts": "62e9ff765afea505d325d8aec61e70c2a3e75d0f56dc53b020e42940ab5bd398",
+    "https://deno.land/x/jose@v5.9.6/jwt/encrypt.ts": "0785771759eeaddf74e841cb7430c3af6d793bcef726ad46fb6047297c1cae1d",
+    "https://deno.land/x/jose@v5.9.6/jwt/produce.ts": "4ec3e3966f6d1ce057159c0569a00aacfc2189b4a3c1c395ff992f673942b92c",
+    "https://deno.land/x/jose@v5.9.6/jwt/sign.ts": "b3770b2c880935e0f3049dcbeecf940a1fade71609c4e7e6a51152dfa7bc3655",
+    "https://deno.land/x/jose@v5.9.6/jwt/unsecured.ts": "4002917b0ec0e89962fc8c75edead3a1dc267944f6d51089bf753db8d9fd5b86",
+    "https://deno.land/x/jose@v5.9.6/jwt/verify.ts": "0bdd020d3a06f387f42d63586817fc3bb4104830d9a74c87eb0a5bed2881245c",
+    "https://deno.land/x/jose@v5.9.6/key/export.ts": "1edf905818bcfcbba02c7dd369caf6fb61b6e19d30d4e4d2cd01030ab90f8b2d",
+    "https://deno.land/x/jose@v5.9.6/key/generate_key_pair.ts": "e841708aa07c95167b9f079f420311c22be837319ab0e7b70b68bdafdae2b4ea",
+    "https://deno.land/x/jose@v5.9.6/key/generate_secret.ts": "3f1bb5f8ef4340f20da3464cc7d0258abcee28f6ee7c72626f7048cc7aaa8b2a",
+    "https://deno.land/x/jose@v5.9.6/key/import.ts": "4cec770702f38a3883102776804b05414b7415105c48b9e41f201de08f3b9b5d",
+    "https://deno.land/x/jose@v5.9.6/lib/aesgcmkw.ts": "6d307f6710b2879fdde07c8e39688ece9019f02170334aa216db4878fc7a6ac8",
+    "https://deno.land/x/jose@v5.9.6/lib/buffer_utils.ts": "0b64941bf694bc810b2c917b61474be46c54854da76bb42b20f1642102542ff1",
+    "https://deno.land/x/jose@v5.9.6/lib/cek.ts": "a474becfe1c2d86fbcf3a24cdcd96274beb8d61bd17926e5f345001f39df922b",
+    "https://deno.land/x/jose@v5.9.6/lib/check_iv_length.ts": "118eb531167126c8421d71a21f2cfdc10a658c933e178b33395ef3e962c54f80",
+    "https://deno.land/x/jose@v5.9.6/lib/check_key_type.ts": "633b9b7e08b913dfdb7a9dfdf224cb89e54849e35ca9b396603e898994f8ca51",
+    "https://deno.land/x/jose@v5.9.6/lib/check_p2s.ts": "2f5549e121c43019ac85a3bb3fe8cb98a397122dcaa80f3cd8bf5fcf314e1f67",
+    "https://deno.land/x/jose@v5.9.6/lib/crypto_key.ts": "b75ba81390a90ea741cf174117d96e7851b221ebd9b0dfb806061175c24aed4f",
+    "https://deno.land/x/jose@v5.9.6/lib/decrypt_key_management.ts": "1996df67cfa015131cbf83dd1374852c78de9ee615a10e08fe7a0f9ec3d63811",
+    "https://deno.land/x/jose@v5.9.6/lib/encrypt_key_management.ts": "e79354c3c2bdfeff07dd61e925de0aa1027f8d21e454c774d08c778e09edc269",
+    "https://deno.land/x/jose@v5.9.6/lib/epoch.ts": "cd608f73f6c100e8156c6020ec2bce6757e01759793f0d6aab23908d3d2ea933",
+    "https://deno.land/x/jose@v5.9.6/lib/format_pem.ts": "b5230682e7a89609238015b77f33afd248f3e0f69bcb5895eece2f86d83100f6",
+    "https://deno.land/x/jose@v5.9.6/lib/invalid_key_input.ts": "b82cda3b49cf56806000a85343b005a05735b90e0886ce421a81c71d9088c375",
+    "https://deno.land/x/jose@v5.9.6/lib/is_disjoint.ts": "a3f7ef698413700d0f268314fc879421c134460ced9538518e5feb3eb64d3efe",
+    "https://deno.land/x/jose@v5.9.6/lib/is_jwk.ts": "cabe3150418db9082eafe083705d7e0b1a36a055eeae60f801fb7860813fdf93",
+    "https://deno.land/x/jose@v5.9.6/lib/is_object.ts": "43549ddc51a3b3d4c22b953b191a961fbb61fb5081e8efb88ad075afa1f4d214",
+    "https://deno.land/x/jose@v5.9.6/lib/iv.ts": "4766d9ad87b478bb7344094f38c8561181b72f8678edd1b5226d1e0f9ab677fc",
+    "https://deno.land/x/jose@v5.9.6/lib/jwt_claims_set.ts": "6f3445f718e7d8519c2ba265a65c564feed4aab52bda860bae974756e826eb09",
+    "https://deno.land/x/jose@v5.9.6/lib/private_symbols.ts": "54b4f384282e686c4484cd71249cea2edb860426c2b1927d94cb3438de9e64ca",
+    "https://deno.land/x/jose@v5.9.6/lib/secs.ts": "40e09916007b3a393f20265ea84dc1df43974e86ec796ce0e5e6724f5917a2b8",
+    "https://deno.land/x/jose@v5.9.6/lib/validate_algorithms.ts": "6b20f4b5f6935cd9edcd6eb2128226144ba792eaa7c47966c666a51baf1682eb",
+    "https://deno.land/x/jose@v5.9.6/lib/validate_crit.ts": "b1214ae1413c969efdca2392c6feea9c3b92c531fc7e137c23397e0430421b86",
+    "https://deno.land/x/jose@v5.9.6/runtime/aeskw.ts": "a32bc607d00031ecc42976b69f4e90d73cbac1bc465d1fbace373a8433105d72",
+    "https://deno.land/x/jose@v5.9.6/runtime/asn1.ts": "013a633b824c18663c8c7f7ec8691bfe3dfef82ee58650de0c6d8ee26154bb6a",
+    "https://deno.land/x/jose@v5.9.6/runtime/base64url.ts": "74ecb18b90de56bcc4424b6c911cfe49b56dd4a316978f5c8ee9a23560069636",
+    "https://deno.land/x/jose@v5.9.6/runtime/bogus.ts": "4f1c967b0d9b4e7105e16ad8c173da55708f377ee5e201d8ee5fc613f3417f08",
+    "https://deno.land/x/jose@v5.9.6/runtime/check_cek_length.ts": "2ee093fcb273602449ed7863ab6bd4dd2a7aeff99507e0573e3cd4b8d8099e5d",
+    "https://deno.land/x/jose@v5.9.6/runtime/check_key_length.ts": "7d23fb5910f9ba10383ca0600b63620ff078c7be7788e0626ec1f215992b67be",
+    "https://deno.land/x/jose@v5.9.6/runtime/decrypt.ts": "c53c80b90892b45f39d58e75a46f53032b131f2d9f5b6b74ddd215c79ca3ed8b",
+    "https://deno.land/x/jose@v5.9.6/runtime/digest.ts": "cee73fad56ce596ffedc56811d174ab413e7981eb847eb67c0e77f213cc2ac2d",
+    "https://deno.land/x/jose@v5.9.6/runtime/ecdhes.ts": "787c277cf841c89b462fc40cc05f5ddec9da89e9fc693cb3238936362c522ebd",
+    "https://deno.land/x/jose@v5.9.6/runtime/encrypt.ts": "a5a89b21010d3dda51544020fe4b2ab0d5d91e10044490fccc1af3d5104e8547",
+    "https://deno.land/x/jose@v5.9.6/runtime/fetch_jwks.ts": "34b71aa6bbd51984d1009792499ea17133dcb11bf2f2d8fba60e8090d900fc20",
+    "https://deno.land/x/jose@v5.9.6/runtime/generate.ts": "62f49bc476267d6321eb63040eaeeabbc44ec9a6a10346f2c1238f86e00744cb",
+    "https://deno.land/x/jose@v5.9.6/runtime/get_sign_verify_key.ts": "8e45cd5f6d5a3ae97013e849863b089b26a2a53fdfb613562a1025eaed201c8e",
+    "https://deno.land/x/jose@v5.9.6/runtime/is_key_like.ts": "2380270e1ff76c2b481f50d8057a10bcc1f33962c0f5ab35dc90e236f036731d",
+    "https://deno.land/x/jose@v5.9.6/runtime/jwk_to_key.ts": "5f26c13e737377e501b3817d51c4000fbdfb1736f2da924462a54400552af621",
+    "https://deno.land/x/jose@v5.9.6/runtime/key_to_jwk.ts": "f101d297b1fc9269a9595231899dc06e29e195f6223543b8d4cf651f6559f0f3",
+    "https://deno.land/x/jose@v5.9.6/runtime/normalize_key.ts": "6d25f61fbe4d756dfe390062dba6e73775092af62f0071170ebb3f71bb6fd5d2",
+    "https://deno.land/x/jose@v5.9.6/runtime/pbes2kw.ts": "ad084eb8dd144df8fd5d7e0b824806e35475398be0d3871c2016c3c467e24b19",
+    "https://deno.land/x/jose@v5.9.6/runtime/random.ts": "3e9c8d08208e5dc186ae659535f0018303ff3b56615335bf0dfb5904fe36aab7",
+    "https://deno.land/x/jose@v5.9.6/runtime/rsaes.ts": "124b6e87d8569b39d6f550b371303c79e9eb28aa0d9b14025eeaffe50282c987",
+    "https://deno.land/x/jose@v5.9.6/runtime/runtime.ts": "d748ecb0c1b57020d6f6c41b4458cce74b4d15ab919c38a0ec32d12cee7f5976",
+    "https://deno.land/x/jose@v5.9.6/runtime/sign.ts": "1524f8855538ca5fd607cd681f804ba421b0ec58f562118f3c635324ba053f90",
+    "https://deno.land/x/jose@v5.9.6/runtime/subtle_dsa.ts": "f66955982c3565bf9d8f80220bee5b5737654582b38ea187143cfe26a20e279a",
+    "https://deno.land/x/jose@v5.9.6/runtime/subtle_rsaes.ts": "26147da83932ebf7266d69ddd408f269395de05ddde64ba4e1585571bb61bd93",
+    "https://deno.land/x/jose@v5.9.6/runtime/timing_safe_equal.ts": "fc5b3f4132cec56630eac4677fef2b519707a9c6a257f8ae86515b0d86ff5f6b",
+    "https://deno.land/x/jose@v5.9.6/runtime/verify.ts": "d391e2286b47485247b475016c66999f5146a1cf8331115385a9ba629251c15e",
+    "https://deno.land/x/jose@v5.9.6/runtime/webcrypto.ts": "3365b7d62eaa7e6befe5e2f4f67aa7859805c41b87064433b6e70f94501aa36e",
+    "https://deno.land/x/jose@v5.9.6/util/base64url.ts": "0e09492d36de17c3b40646486b3a31ae7ce060d1bfa7185a52f659aaffc3da0b",
+    "https://deno.land/x/jose@v5.9.6/util/decode_jwt.ts": "a6347360591bd60b076d115fc231e3ecd84aef319922a6c6e94554e68863e3af",
+    "https://deno.land/x/jose@v5.9.6/util/decode_protected_header.ts": "3412c8aacffee93148478f14a0ebb97b2ff060944f49dd233223d262f592ee36",
+    "https://deno.land/x/jose@v5.9.6/util/errors.ts": "b7ecf22990ce73a42650fd09666fb7174fcd91eec387aa26b361269c8022220f",
+    "https://deno.land/x/jose@v5.9.6/util/runtime.ts": "088cae7df0d285065f141d880c5c21a572234997082337d1125d7f1603059642",
     "https://raw.githubusercontent.com/turquoze/plugins/f4e21d45858c9a93d37e9d143f3344c12173b3cb/cache/deps.ts": "94e567005ac3e86eab1bfa61f06bbce175bb25c4fff7894a69337e729a615c1b",
     "https://raw.githubusercontent.com/turquoze/plugins/f4e21d45858c9a93d37e9d143f3344c12173b3cb/cache/libsql.ts": "2ba470a4c1ab1b5665b2a73f08b57adfcb9ba59df5d8a42588ed904ae86bec14",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/app.ts": "b363f1bdaf41165ec11fb0f0dca7402cb959f6574cde076b1f4ca0952322b31f",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/clients/db.ts": "cadc9efe708ca3f4ac9d8a3acee2927e171f65caaa98124187a0b8821e156d34",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/deps.ts": "1d84361129e02ce07da020ce4aaad238178b30d2bd2bf283c4e0f4226f1db1e4",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/middleware/authGuard.ts": "0f52bcc13130872791f70c58137a2c9c21db128a03a2519b4c8857e586027bd7",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/middleware/cookieGuard.ts": "d8fe04603915c321d2e3c69ca5690de532467e6d301cb3618449c9a2681b49c0",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/middleware/cors.ts": "bcf963f6e87eb149ad571582e55990a9be8359d66e7eee0538161612fad362c8",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/middleware/logger.ts": "ef8851f2964ded5b703ac4f8eb29c35a7bea8a7f29de4ee29a6832375899829a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/middleware/responseTimer.ts": "3ca1a77a0835e6f510bcf6f8c23aa3ec513d9fe59fdfc748ad5795f632c6fd3e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/middleware/roleGuard.ts": "aeef8b0cf2be6d38612d395faf9269b7e5cb5605226c0b113f50491bd48aeb2d",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/middleware/tokenGuard.ts": "047c1f73d28d8fec3024fd574a190a374bd017993b82e23cba79e6960a3c5312",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/pages/404.ts": "68f3a9285e078a9fe198d1bf7f74d92725f1903603ed7f415eb874064cd58236",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/admin.ts": "c36146836eed88dc5bf43de024feea6f0f83039165e9b1373213dbb4315552cf",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/auth.ts": "e678d07b63bfadc7f4aa82baba2f8026b7e734d2ed2fe0d1df56f75fb3e0dd06",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/categories.ts": "d407f3a96ba674d3043d271a7e9e59329f4408d91410c2e78bb92ba3bdcef87c",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/dashboard.ts": "e5382bfcc43d7b98fbe5d94e413a2debc046ec9c6842d0aea3deb05f3288bc0b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/discounts.ts": "7dfe2558a9cbb491db6e5b81ed747c5d9fe998661347b5ebc80892278c9d166e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/inventories.ts": "b52e04cb3925d1e48f0e0c29af8161a3200163c7cea54f7437b01bd9d2d4222a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/oauth.ts": "f165dbc12de095edfab4e4d88eef4184363a0c8a5e6b2fb960c153bd239e8fc8",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/orders.ts": "4d40d0ee5b483925acb31210bb3ec4b3d034ab3a8cdad9e2565f41fd6fcf06b7",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/prices.ts": "bc2fffc7c24bd90994bbe6a310e2d77826ea15af24d9bd8b8930ded3223bfb46",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/products.ts": "8d7bc44c3fc86786dd7020d721c97ff33eb2c5be9739777e03c2be11ce0f3c07",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/settings.ts": "1395ab8b2feaff4299fdc16e3964b18ad646fe4c03d9b098e94bb227ec643650",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/shops.ts": "e3d0d922e4b63cbdc21948e49bc6aa1c08da5ebb0cd21b0479c48f3918b4d4b9",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/tokens.ts": "8096f3b22a3285a82ccd79d6233e35fcdd33af315af6bc2a7695df0d7138db37",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/users.ts": "804cac63b7fb16f94293ca3fa69469b5fa0f136cffceeddada29ff49fce1d630",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/admin/warehouses.ts": "b4c28d3848b46319b334b1a79ad6f319b840df1a75239a1b6ea71eb194cb71bc",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/api/api.ts": "c6bcfb46302f8ff5fbb5a41cf36406ffcb712c37e83f8bb7780aef176ac5da2a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/api/carts.ts": "1ad61316db538a9126754cc104ccb4c88014d72d7dc64cf7df22c2bda4e9c4a7",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/api/categories.ts": "672bf084d068788f9d0b1795882e473d383a9497293fb5d7354dd22fe985b337",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/api/products.ts": "6f3a67b5005d473d09def4c54b57a311b9d318280db7806620b96b722a51b35b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/api/users.ts": "55bc498bc2cc52dca2fbfc867a6640477f0b1b223f4aac97c68319c7efaa9188",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/utils/ping.ts": "137b6c6c4ddd01e919024bcb254005ea47dcfd10f384146665187af9438bbaec",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/routes/utils/utils.ts": "a0389bc425faefda0365a6c1067b8999397e19374ce0c5f2f38a7d37f3866de6",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/adminService/mod.ts": "a47cf5bbf6db977417e2450ca18b6b344e7ed859d31cbdc57bae9707c8c3b17e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/cacheService/mod.ts": "4dc2feb12de68adee0b3d765a0c0b5c369756ad85edab9ff85a31d122228bbf4",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/cartService/mod.ts": "ed217edd83e1ba4c85bca0d3160c76838915f8637ee4d6ccfdfb193890238f63",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/categoryLinkService/mod.ts": "be0615c0bc76275d5f64b7a8b71a1d0feb0879c2fd7674b6c71b37e8b52ee0b4",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/categoryService/mod.ts": "0924d564ca93b7304bc48e64648e6a5df19f2942c043040f29e9efb6e1c7ec19",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/discountService/mod.ts": "da88cc8a4f5267696ff6a8ba4249a1402f6d3d22da0cff3f86c67f91a049ac1e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/adminService.ts": "9edb9879e5b71770e13bf2513420245e32a17447ad4d12b33b017272db3430ad",
     "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/cacheService.ts": "7593f6f78face4105e5558206be9f9c28fbb4dd9ed12f54e83a58658cd9cbcb3",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/cartService.ts": "a3f9ecd66a9219aabfebad992a26cc63aeeabfce0f00aa10104ee7cb358e1a63",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/categoryLinkService.ts": "7ff86c4a5738b4075438e71a40bec99d9efa6ca792c834d65b0b751715971053",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/categoryService.ts": "0206bfdb18ac6361235b7e4837a6a8686b1ec45eb657b2c888c148cabae1f46b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/discountService.ts": "12e6c2092abb1242806abcca40df62da7fabed735a8a73f497a5ac67f81dae6a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/inventoryService.ts": "75bc90e9bdb73eeba34d900362e0f7dc6079516b1f9d16cd3317decc80938fb8",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/notificationService.ts": "7bd683b9818470fec690c07e78f8840c87ae04bcaafe9ced2dd9b122f3202c58",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/oauthService.ts": "9efe6e4c918848f281cd5e82c3e85c788721fe3ef9581cf28222bcddc6acc751",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/orderService.ts": "3b324babb09c554599e137a1fb863de744bb7c0c203fad77194c0543ec20c983",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/organizationLinkService.ts": "6348d194e2485db841a280ad926583c5bf53e8a75d1f6654ac42509202259aa2",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/organizationService.ts": "d623402ee0323ecd20fdd4ecaab9e67a3a2b3a63959780be72bf1e0aca4c9609",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/paymentService.ts": "b18c5e5c42a9b3b309450020966c7c9b57f3d082d47e5a258167d45f57747608",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/pluginService.ts": "0aff66e770a1b12a8c916fd8673881316011734b3f16142ea77893375d7180d6",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/priceCalculatorService.ts": "ea4ffdf6d7243d7bc979fa2bbb23b21537d845cb0f4465bfc56143876bf69fad",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/priceService.ts": "6afc38a2e9cb6d18e28a8ed9c7e462252627f0214e990154f6b50d303771e4d3",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/productService.ts": "897f9a72b580a38aa3ec01f5e0a3e66a53f05ff7ded4c39abb5b46d357b58a2b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/searchService.ts": "05546588cf9a5d6662aa9f8fbafdc1220c15f6fea7f120733fdb57d1e664b393",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/settingsService.ts": "1a677665b0cb32bb9a3637c5a911510b0791b24a3db68788422054e6c3d2ad7e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/shopLinkService.ts": "0a39707730687a594af68f6d0fa63fff23a720b3207db0dc115401dcb0ae6d9d",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/shopService.ts": "0738f9b97ee9674f1b578fb7770c01146316bbd1711dd35bbe36f17da30b6490",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/tokenService.ts": "2d86b6ec3bda2eb04cabfe3c0df7f099b1edff0d5fc00182a312cb14eec457ab",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/userService.ts": "5d334964f098540f52f722081559dae7747b62f668e9f47a50df9783478ecd41",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/interfaces/warehouseService.ts": "d9a7f3a36ea8050305365b77675b1fda6bfe5c82b53176a649a5bc8b38767ec6",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/inventoryService/mod.ts": "cad830e9cae7a6af94b07756f00a421ac909f0a90b8e1fcf3a8471f886115f00",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/mod.ts": "e9c58d6ceac722fc4973bfc1fce9e20366ad5e64ac87fca9e095d71476e79999",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/notificationService/mod.ts": "c94b0d75f1461d9c093809111289e691c618821b568a119917b37f4c52623b6b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/oauthService/mod.ts": "d00f080ff815b06e7d9d3670fe80464bb0fb55bee48adbb75be8b4a400e3598a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/orderService/mod.ts": "8f898e0a93bb52284f0f67c5d89ece9560a334e64536d07ad981006c23b3c31c",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/organizationLinkService/mod.ts": "ebcfffd03c85ed340b0e632b8559cebb1faab48a511c64757b6b0bc6c4cb3e80",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/organizationService/mod.ts": "683fba98bec8626557d9b7adbf4b362f6840d7f4e0e1f62abdc06fc28a398af0",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/paymentService/mod.ts": "2c36840de9b41ffe75fea07df841adca3e92840902ae652fabb99becce80e2af",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/pluginService/mod.ts": "19d96f3f597760553d74dee0aa90e2b2b134a5bd73c200d945f9847500897158",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/priceCalculatorService/mod.ts": "ba974842db4f67d476068a0886e2163c438cee9f94f5cc39c9a72e3c00e06101",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/priceService/mod.ts": "8b0ded33ed73583e32e727f8057143d32e13f7da327c56d591c92334c2fff916",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/productService/mod.ts": "1d7fd7f9fff5897d6cd8fd96cc7923c4487cb192f98b00b0f8f9d36a90d09093",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/searchService/mod.ts": "92e024ce9efaf27fb18737ff7dff5524c010d3a39988063b4a104f55f7d4ff53",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/settingsService/mod.ts": "73ecfa0f98f9b82285589b8c8c7e0c198b09c3d4d4da0a2abf9bceb760760bca",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/shopLinkService/mod.ts": "6187ba10a7bd2ed5cc0908c5e2dc9e85bda473f4e1c9d225fbd5efd617083e6e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/shopService/mod.ts": "7831634a4c586b843a573e0a4cc3c49e24e3dbae6d35ad1fbacf6ff692b36c40",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/tokenService/mod.ts": "7c21a230d3284e7b6e58563b9cd642824461e73046722c2e12b3ed4f9913ff81",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/userService/mod.ts": "cf1caebcf022d844b30a56ab38ff333a5530780a1af9e85f1affbb583bac0f82",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/services/warehouseService/mod.ts": "ca241fd10fb195063a5173dee60a9eae2cb6af2edc298f6a26eeb277b1f493ed",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/utils/errors.ts": "c2c5bcb7ddea6bd9e0cf74483be32d8d275911fb2ebcdb54f16f5c3e6d1fcde7",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/utils/events.ts": "cdf16d839e555c202311b20fb1084f7e67b0d54a0e47a772b1ec7d3ab08c2abf",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/utils/schema.ts": "5cd79a058d6556aae391f87f2ef147465c0cc1bcbdb94cda9f70d98f0ee99ed0",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/utils/secrets.ts": "116e168fcc10337b9da4cd3b49492db59da42999d45cbef0eb20afd1d8f5a0d2",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/utils/types.ts": "68698fccdb92d807129d0af3760131ac1df94925e4d534c7c3899aa1de623dfc",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/utils/utils.ts": "f1ec720a9a5d291d8f0b2cbdf665f261e8bfeb0ac8cc85ba9ff3d6a7abc4c083",
-    "https://raw.githubusercontent.com/turquoze/turquoze/36d26023cc9b2d0791b2fc0367eba36337a2df59/src/utils/validator.ts": "8402d4dc85efddb3630c096baed1c64860a561b7734935d68205919fd4941550",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/app.ts": "286d452317dcca94023fe1587d3f36cb44fcca33d2e1217750855b4ecf8e0bab",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/clients/db.ts": "9b2de2a29062936c4aa68f1fad28f09dbdda1d960511435fb2b317a8cf3bbcb5",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/deps.ts": "3b4334d29904a29de1c3118c462d6130c8221c5bf6acb413b79318df93327f1f",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/middleware/authGuard.ts": "beff1a0958dedcbebdd2601f97c1a19fd4013c942dea17d03b441cd8e0dcdbe8",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/middleware/cookieGuard.ts": "947d08448c862404fcafe61c938e4fce2414b5231ffeab4c5b664c12ddb0de6f",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/middleware/cors.ts": "bcf963f6e87eb149ad571582e55990a9be8359d66e7eee0538161612fad362c8",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/middleware/logger.ts": "ef8851f2964ded5b703ac4f8eb29c35a7bea8a7f29de4ee29a6832375899829a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/middleware/responseTimer.ts": "3ca1a77a0835e6f510bcf6f8c23aa3ec513d9fe59fdfc748ad5795f632c6fd3e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/middleware/roleGuard.ts": "aeef8b0cf2be6d38612d395faf9269b7e5cb5605226c0b113f50491bd48aeb2d",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/middleware/tokenGuard.ts": "0447dbfd8fb7837b3129115238b221685df7a005d5a484e115d6e4e761098939",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/pages/404.ts": "68f3a9285e078a9fe198d1bf7f74d92725f1903603ed7f415eb874064cd58236",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/admin.ts": "c36146836eed88dc5bf43de024feea6f0f83039165e9b1373213dbb4315552cf",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/auth.ts": "adc06d41a7f0d318f77a076cebaa01e7eb67da0e8f6e08cebb8d7ad6b358998a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/categories.ts": "d407f3a96ba674d3043d271a7e9e59329f4408d91410c2e78bb92ba3bdcef87c",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/dashboard.ts": "e5382bfcc43d7b98fbe5d94e413a2debc046ec9c6842d0aea3deb05f3288bc0b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/discounts.ts": "7dfe2558a9cbb491db6e5b81ed747c5d9fe998661347b5ebc80892278c9d166e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/inventories.ts": "b52e04cb3925d1e48f0e0c29af8161a3200163c7cea54f7437b01bd9d2d4222a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/oauth.ts": "0706918bdf49f4a0c641a0e5730cda1b49178727ddc316882648b2be2b56cb5a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/orders.ts": "4d40d0ee5b483925acb31210bb3ec4b3d034ab3a8cdad9e2565f41fd6fcf06b7",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/prices.ts": "bc2fffc7c24bd90994bbe6a310e2d77826ea15af24d9bd8b8930ded3223bfb46",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/products.ts": "8d7bc44c3fc86786dd7020d721c97ff33eb2c5be9739777e03c2be11ce0f3c07",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/settings.ts": "1395ab8b2feaff4299fdc16e3964b18ad646fe4c03d9b098e94bb227ec643650",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/shops.ts": "e3d0d922e4b63cbdc21948e49bc6aa1c08da5ebb0cd21b0479c48f3918b4d4b9",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/tokens.ts": "8096f3b22a3285a82ccd79d6233e35fcdd33af315af6bc2a7695df0d7138db37",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/users.ts": "804cac63b7fb16f94293ca3fa69469b5fa0f136cffceeddada29ff49fce1d630",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/admin/warehouses.ts": "b4c28d3848b46319b334b1a79ad6f319b840df1a75239a1b6ea71eb194cb71bc",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/api/api.ts": "c6bcfb46302f8ff5fbb5a41cf36406ffcb712c37e83f8bb7780aef176ac5da2a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/api/carts.ts": "1ad61316db538a9126754cc104ccb4c88014d72d7dc64cf7df22c2bda4e9c4a7",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/api/categories.ts": "672bf084d068788f9d0b1795882e473d383a9497293fb5d7354dd22fe985b337",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/api/products.ts": "6f3a67b5005d473d09def4c54b57a311b9d318280db7806620b96b722a51b35b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/api/users.ts": "55bc498bc2cc52dca2fbfc867a6640477f0b1b223f4aac97c68319c7efaa9188",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/utils/ping.ts": "137b6c6c4ddd01e919024bcb254005ea47dcfd10f384146665187af9438bbaec",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/routes/utils/utils.ts": "a0389bc425faefda0365a6c1067b8999397e19374ce0c5f2f38a7d37f3866de6",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/adminService/mod.ts": "a47cf5bbf6db977417e2450ca18b6b344e7ed859d31cbdc57bae9707c8c3b17e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/cacheService/mod.ts": "4dc2feb12de68adee0b3d765a0c0b5c369756ad85edab9ff85a31d122228bbf4",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/cartService/mod.ts": "ed217edd83e1ba4c85bca0d3160c76838915f8637ee4d6ccfdfb193890238f63",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/categoryLinkService/mod.ts": "be0615c0bc76275d5f64b7a8b71a1d0feb0879c2fd7674b6c71b37e8b52ee0b4",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/categoryService/mod.ts": "0924d564ca93b7304bc48e64648e6a5df19f2942c043040f29e9efb6e1c7ec19",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/discountService/mod.ts": "da88cc8a4f5267696ff6a8ba4249a1402f6d3d22da0cff3f86c67f91a049ac1e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/adminService.ts": "9edb9879e5b71770e13bf2513420245e32a17447ad4d12b33b017272db3430ad",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/cacheService.ts": "7593f6f78face4105e5558206be9f9c28fbb4dd9ed12f54e83a58658cd9cbcb3",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/cartService.ts": "a3f9ecd66a9219aabfebad992a26cc63aeeabfce0f00aa10104ee7cb358e1a63",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/categoryLinkService.ts": "7ff86c4a5738b4075438e71a40bec99d9efa6ca792c834d65b0b751715971053",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/categoryService.ts": "0206bfdb18ac6361235b7e4837a6a8686b1ec45eb657b2c888c148cabae1f46b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/discountService.ts": "12e6c2092abb1242806abcca40df62da7fabed735a8a73f497a5ac67f81dae6a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/inventoryService.ts": "75bc90e9bdb73eeba34d900362e0f7dc6079516b1f9d16cd3317decc80938fb8",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/notificationService.ts": "7bd683b9818470fec690c07e78f8840c87ae04bcaafe9ced2dd9b122f3202c58",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/oauthService.ts": "9efe6e4c918848f281cd5e82c3e85c788721fe3ef9581cf28222bcddc6acc751",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/orderService.ts": "3b324babb09c554599e137a1fb863de744bb7c0c203fad77194c0543ec20c983",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/organizationLinkService.ts": "6348d194e2485db841a280ad926583c5bf53e8a75d1f6654ac42509202259aa2",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/organizationService.ts": "d623402ee0323ecd20fdd4ecaab9e67a3a2b3a63959780be72bf1e0aca4c9609",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/paymentService.ts": "b18c5e5c42a9b3b309450020966c7c9b57f3d082d47e5a258167d45f57747608",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/pluginService.ts": "0aff66e770a1b12a8c916fd8673881316011734b3f16142ea77893375d7180d6",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/priceCalculatorService.ts": "ea4ffdf6d7243d7bc979fa2bbb23b21537d845cb0f4465bfc56143876bf69fad",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/priceService.ts": "6afc38a2e9cb6d18e28a8ed9c7e462252627f0214e990154f6b50d303771e4d3",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/productService.ts": "897f9a72b580a38aa3ec01f5e0a3e66a53f05ff7ded4c39abb5b46d357b58a2b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/searchService.ts": "05546588cf9a5d6662aa9f8fbafdc1220c15f6fea7f120733fdb57d1e664b393",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/settingsService.ts": "1a677665b0cb32bb9a3637c5a911510b0791b24a3db68788422054e6c3d2ad7e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/shopLinkService.ts": "0a39707730687a594af68f6d0fa63fff23a720b3207db0dc115401dcb0ae6d9d",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/shopService.ts": "0738f9b97ee9674f1b578fb7770c01146316bbd1711dd35bbe36f17da30b6490",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/tokenService.ts": "2d86b6ec3bda2eb04cabfe3c0df7f099b1edff0d5fc00182a312cb14eec457ab",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/userService.ts": "5d334964f098540f52f722081559dae7747b62f668e9f47a50df9783478ecd41",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/interfaces/warehouseService.ts": "d9a7f3a36ea8050305365b77675b1fda6bfe5c82b53176a649a5bc8b38767ec6",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/inventoryService/mod.ts": "cad830e9cae7a6af94b07756f00a421ac909f0a90b8e1fcf3a8471f886115f00",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/mod.ts": "e9c58d6ceac722fc4973bfc1fce9e20366ad5e64ac87fca9e095d71476e79999",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/notificationService/mod.ts": "c94b0d75f1461d9c093809111289e691c618821b568a119917b37f4c52623b6b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/oauthService/mod.ts": "d00f080ff815b06e7d9d3670fe80464bb0fb55bee48adbb75be8b4a400e3598a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/orderService/mod.ts": "8f898e0a93bb52284f0f67c5d89ece9560a334e64536d07ad981006c23b3c31c",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/organizationLinkService/mod.ts": "ebcfffd03c85ed340b0e632b8559cebb1faab48a511c64757b6b0bc6c4cb3e80",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/organizationService/mod.ts": "683fba98bec8626557d9b7adbf4b362f6840d7f4e0e1f62abdc06fc28a398af0",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/paymentService/mod.ts": "2c36840de9b41ffe75fea07df841adca3e92840902ae652fabb99becce80e2af",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/pluginService/mod.ts": "19d96f3f597760553d74dee0aa90e2b2b134a5bd73c200d945f9847500897158",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/priceCalculatorService/mod.ts": "ba974842db4f67d476068a0886e2163c438cee9f94f5cc39c9a72e3c00e06101",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/priceService/mod.ts": "8b0ded33ed73583e32e727f8057143d32e13f7da327c56d591c92334c2fff916",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/productService/mod.ts": "1d7fd7f9fff5897d6cd8fd96cc7923c4487cb192f98b00b0f8f9d36a90d09093",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/searchService/mod.ts": "92e024ce9efaf27fb18737ff7dff5524c010d3a39988063b4a104f55f7d4ff53",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/settingsService/mod.ts": "73ecfa0f98f9b82285589b8c8c7e0c198b09c3d4d4da0a2abf9bceb760760bca",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/shopLinkService/mod.ts": "6187ba10a7bd2ed5cc0908c5e2dc9e85bda473f4e1c9d225fbd5efd617083e6e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/shopService/mod.ts": "7831634a4c586b843a573e0a4cc3c49e24e3dbae6d35ad1fbacf6ff692b36c40",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/tokenService/mod.ts": "7c21a230d3284e7b6e58563b9cd642824461e73046722c2e12b3ed4f9913ff81",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/userService/mod.ts": "cf1caebcf022d844b30a56ab38ff333a5530780a1af9e85f1affbb583bac0f82",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/services/warehouseService/mod.ts": "ca241fd10fb195063a5173dee60a9eae2cb6af2edc298f6a26eeb277b1f493ed",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/utils/errors.ts": "c2c5bcb7ddea6bd9e0cf74483be32d8d275911fb2ebcdb54f16f5c3e6d1fcde7",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/utils/events.ts": "cdf16d839e555c202311b20fb1084f7e67b0d54a0e47a772b1ec7d3ab08c2abf",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/utils/schema.ts": "5cd79a058d6556aae391f87f2ef147465c0cc1bcbdb94cda9f70d98f0ee99ed0",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/utils/types.ts": "68698fccdb92d807129d0af3760131ac1df94925e4d534c7c3899aa1de623dfc",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/utils/utils.ts": "2d66274e20357ff0f686d3bddeb1cd1963667db01761c273a7bb98f92a59ce0f",
-    "https://raw.githubusercontent.com/turquoze/turquoze/5a75fcf9fe38d8d9b75bbb6236b8f5e9819723e0/src/utils/validator.ts": "8402d4dc85efddb3630c096baed1c64860a561b7734935d68205919fd4941550",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/app.ts": "b363f1bdaf41165ec11fb0f0dca7402cb959f6574cde076b1f4ca0952322b31f",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/clients/db.ts": "cadc9efe708ca3f4ac9d8a3acee2927e171f65caaa98124187a0b8821e156d34",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/deps.ts": "1d84361129e02ce07da020ce4aaad238178b30d2bd2bf283c4e0f4226f1db1e4",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/middleware/authGuard.ts": "0f52bcc13130872791f70c58137a2c9c21db128a03a2519b4c8857e586027bd7",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/middleware/cookieGuard.ts": "d8fe04603915c321d2e3c69ca5690de532467e6d301cb3618449c9a2681b49c0",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/middleware/cors.ts": "bcf963f6e87eb149ad571582e55990a9be8359d66e7eee0538161612fad362c8",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/middleware/logger.ts": "ef8851f2964ded5b703ac4f8eb29c35a7bea8a7f29de4ee29a6832375899829a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/middleware/responseTimer.ts": "3ca1a77a0835e6f510bcf6f8c23aa3ec513d9fe59fdfc748ad5795f632c6fd3e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/middleware/roleGuard.ts": "aeef8b0cf2be6d38612d395faf9269b7e5cb5605226c0b113f50491bd48aeb2d",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/middleware/tokenGuard.ts": "047c1f73d28d8fec3024fd574a190a374bd017993b82e23cba79e6960a3c5312",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/pages/404.ts": "68f3a9285e078a9fe198d1bf7f74d92725f1903603ed7f415eb874064cd58236",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/admin.ts": "c36146836eed88dc5bf43de024feea6f0f83039165e9b1373213dbb4315552cf",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/auth.ts": "e678d07b63bfadc7f4aa82baba2f8026b7e734d2ed2fe0d1df56f75fb3e0dd06",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/categories.ts": "d407f3a96ba674d3043d271a7e9e59329f4408d91410c2e78bb92ba3bdcef87c",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/dashboard.ts": "e5382bfcc43d7b98fbe5d94e413a2debc046ec9c6842d0aea3deb05f3288bc0b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/discounts.ts": "7dfe2558a9cbb491db6e5b81ed747c5d9fe998661347b5ebc80892278c9d166e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/inventories.ts": "b52e04cb3925d1e48f0e0c29af8161a3200163c7cea54f7437b01bd9d2d4222a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/oauth.ts": "f165dbc12de095edfab4e4d88eef4184363a0c8a5e6b2fb960c153bd239e8fc8",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/orders.ts": "4d40d0ee5b483925acb31210bb3ec4b3d034ab3a8cdad9e2565f41fd6fcf06b7",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/prices.ts": "bc2fffc7c24bd90994bbe6a310e2d77826ea15af24d9bd8b8930ded3223bfb46",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/products.ts": "8d7bc44c3fc86786dd7020d721c97ff33eb2c5be9739777e03c2be11ce0f3c07",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/settings.ts": "1395ab8b2feaff4299fdc16e3964b18ad646fe4c03d9b098e94bb227ec643650",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/shops.ts": "e3d0d922e4b63cbdc21948e49bc6aa1c08da5ebb0cd21b0479c48f3918b4d4b9",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/tokens.ts": "8096f3b22a3285a82ccd79d6233e35fcdd33af315af6bc2a7695df0d7138db37",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/users.ts": "804cac63b7fb16f94293ca3fa69469b5fa0f136cffceeddada29ff49fce1d630",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/admin/warehouses.ts": "b4c28d3848b46319b334b1a79ad6f319b840df1a75239a1b6ea71eb194cb71bc",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/api/api.ts": "c6bcfb46302f8ff5fbb5a41cf36406ffcb712c37e83f8bb7780aef176ac5da2a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/api/carts.ts": "1ad61316db538a9126754cc104ccb4c88014d72d7dc64cf7df22c2bda4e9c4a7",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/api/categories.ts": "672bf084d068788f9d0b1795882e473d383a9497293fb5d7354dd22fe985b337",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/api/products.ts": "6f3a67b5005d473d09def4c54b57a311b9d318280db7806620b96b722a51b35b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/api/users.ts": "55bc498bc2cc52dca2fbfc867a6640477f0b1b223f4aac97c68319c7efaa9188",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/utils/ping.ts": "137b6c6c4ddd01e919024bcb254005ea47dcfd10f384146665187af9438bbaec",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/routes/utils/utils.ts": "a0389bc425faefda0365a6c1067b8999397e19374ce0c5f2f38a7d37f3866de6",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/adminService/mod.ts": "a47cf5bbf6db977417e2450ca18b6b344e7ed859d31cbdc57bae9707c8c3b17e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/cacheService/mod.ts": "4dc2feb12de68adee0b3d765a0c0b5c369756ad85edab9ff85a31d122228bbf4",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/cartService/mod.ts": "ed217edd83e1ba4c85bca0d3160c76838915f8637ee4d6ccfdfb193890238f63",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/categoryLinkService/mod.ts": "be0615c0bc76275d5f64b7a8b71a1d0feb0879c2fd7674b6c71b37e8b52ee0b4",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/categoryService/mod.ts": "0924d564ca93b7304bc48e64648e6a5df19f2942c043040f29e9efb6e1c7ec19",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/discountService/mod.ts": "da88cc8a4f5267696ff6a8ba4249a1402f6d3d22da0cff3f86c67f91a049ac1e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/adminService.ts": "9edb9879e5b71770e13bf2513420245e32a17447ad4d12b33b017272db3430ad",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/cacheService.ts": "7593f6f78face4105e5558206be9f9c28fbb4dd9ed12f54e83a58658cd9cbcb3",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/cartService.ts": "a3f9ecd66a9219aabfebad992a26cc63aeeabfce0f00aa10104ee7cb358e1a63",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/categoryLinkService.ts": "7ff86c4a5738b4075438e71a40bec99d9efa6ca792c834d65b0b751715971053",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/categoryService.ts": "0206bfdb18ac6361235b7e4837a6a8686b1ec45eb657b2c888c148cabae1f46b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/discountService.ts": "12e6c2092abb1242806abcca40df62da7fabed735a8a73f497a5ac67f81dae6a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/inventoryService.ts": "75bc90e9bdb73eeba34d900362e0f7dc6079516b1f9d16cd3317decc80938fb8",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/notificationService.ts": "7bd683b9818470fec690c07e78f8840c87ae04bcaafe9ced2dd9b122f3202c58",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/oauthService.ts": "9efe6e4c918848f281cd5e82c3e85c788721fe3ef9581cf28222bcddc6acc751",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/orderService.ts": "3b324babb09c554599e137a1fb863de744bb7c0c203fad77194c0543ec20c983",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/organizationLinkService.ts": "6348d194e2485db841a280ad926583c5bf53e8a75d1f6654ac42509202259aa2",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/organizationService.ts": "d623402ee0323ecd20fdd4ecaab9e67a3a2b3a63959780be72bf1e0aca4c9609",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/paymentService.ts": "b18c5e5c42a9b3b309450020966c7c9b57f3d082d47e5a258167d45f57747608",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/pluginService.ts": "0aff66e770a1b12a8c916fd8673881316011734b3f16142ea77893375d7180d6",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/priceCalculatorService.ts": "ea4ffdf6d7243d7bc979fa2bbb23b21537d845cb0f4465bfc56143876bf69fad",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/priceService.ts": "6afc38a2e9cb6d18e28a8ed9c7e462252627f0214e990154f6b50d303771e4d3",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/productService.ts": "897f9a72b580a38aa3ec01f5e0a3e66a53f05ff7ded4c39abb5b46d357b58a2b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/searchService.ts": "05546588cf9a5d6662aa9f8fbafdc1220c15f6fea7f120733fdb57d1e664b393",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/settingsService.ts": "1a677665b0cb32bb9a3637c5a911510b0791b24a3db68788422054e6c3d2ad7e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/shopLinkService.ts": "0a39707730687a594af68f6d0fa63fff23a720b3207db0dc115401dcb0ae6d9d",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/shopService.ts": "0738f9b97ee9674f1b578fb7770c01146316bbd1711dd35bbe36f17da30b6490",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/tokenService.ts": "2d86b6ec3bda2eb04cabfe3c0df7f099b1edff0d5fc00182a312cb14eec457ab",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/userService.ts": "5d334964f098540f52f722081559dae7747b62f668e9f47a50df9783478ecd41",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/interfaces/warehouseService.ts": "d9a7f3a36ea8050305365b77675b1fda6bfe5c82b53176a649a5bc8b38767ec6",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/inventoryService/mod.ts": "cad830e9cae7a6af94b07756f00a421ac909f0a90b8e1fcf3a8471f886115f00",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/mod.ts": "e9c58d6ceac722fc4973bfc1fce9e20366ad5e64ac87fca9e095d71476e79999",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/notificationService/mod.ts": "c94b0d75f1461d9c093809111289e691c618821b568a119917b37f4c52623b6b",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/oauthService/mod.ts": "d00f080ff815b06e7d9d3670fe80464bb0fb55bee48adbb75be8b4a400e3598a",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/orderService/mod.ts": "8f898e0a93bb52284f0f67c5d89ece9560a334e64536d07ad981006c23b3c31c",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/organizationLinkService/mod.ts": "ebcfffd03c85ed340b0e632b8559cebb1faab48a511c64757b6b0bc6c4cb3e80",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/organizationService/mod.ts": "683fba98bec8626557d9b7adbf4b362f6840d7f4e0e1f62abdc06fc28a398af0",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/paymentService/mod.ts": "2c36840de9b41ffe75fea07df841adca3e92840902ae652fabb99becce80e2af",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/pluginService/mod.ts": "19d96f3f597760553d74dee0aa90e2b2b134a5bd73c200d945f9847500897158",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/priceCalculatorService/mod.ts": "ba974842db4f67d476068a0886e2163c438cee9f94f5cc39c9a72e3c00e06101",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/priceService/mod.ts": "8b0ded33ed73583e32e727f8057143d32e13f7da327c56d591c92334c2fff916",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/productService/mod.ts": "1d7fd7f9fff5897d6cd8fd96cc7923c4487cb192f98b00b0f8f9d36a90d09093",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/searchService/mod.ts": "92e024ce9efaf27fb18737ff7dff5524c010d3a39988063b4a104f55f7d4ff53",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/settingsService/mod.ts": "73ecfa0f98f9b82285589b8c8c7e0c198b09c3d4d4da0a2abf9bceb760760bca",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/shopLinkService/mod.ts": "6187ba10a7bd2ed5cc0908c5e2dc9e85bda473f4e1c9d225fbd5efd617083e6e",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/shopService/mod.ts": "7831634a4c586b843a573e0a4cc3c49e24e3dbae6d35ad1fbacf6ff692b36c40",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/tokenService/mod.ts": "7c21a230d3284e7b6e58563b9cd642824461e73046722c2e12b3ed4f9913ff81",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/userService/mod.ts": "cf1caebcf022d844b30a56ab38ff333a5530780a1af9e85f1affbb583bac0f82",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/services/warehouseService/mod.ts": "ca241fd10fb195063a5173dee60a9eae2cb6af2edc298f6a26eeb277b1f493ed",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/utils/errors.ts": "c2c5bcb7ddea6bd9e0cf74483be32d8d275911fb2ebcdb54f16f5c3e6d1fcde7",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/utils/events.ts": "cdf16d839e555c202311b20fb1084f7e67b0d54a0e47a772b1ec7d3ab08c2abf",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/utils/schema.ts": "5cd79a058d6556aae391f87f2ef147465c0cc1bcbdb94cda9f70d98f0ee99ed0",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/utils/secrets.ts": "116e168fcc10337b9da4cd3b49492db59da42999d45cbef0eb20afd1d8f5a0d2",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/utils/types.ts": "68698fccdb92d807129d0af3760131ac1df94925e4d534c7c3899aa1de623dfc",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/utils/utils.ts": "2d66274e20357ff0f686d3bddeb1cd1963667db01761c273a7bb98f92a59ce0f",
-    "https://raw.githubusercontent.com/turquoze/turquoze/b26a0663197c55ba518fa66224ce3da3d4e21a48/src/utils/validator.ts": "8402d4dc85efddb3630c096baed1c64860a561b7734935d68205919fd4941550"
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/app.ts": "089e77ac2cfe232278fa26f8f35fb532425fbe05732683a2e69d1b07c08b34d1",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/clients/db.ts": "9b2de2a29062936c4aa68f1fad28f09dbdda1d960511435fb2b317a8cf3bbcb5",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/deps.ts": "bda9a66934a26b67cf711a33bf442b651367fbc5e3fb066b625b8aa2f2b4142c",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/middleware/authGuard.ts": "c10f69923d98c8ea8b93110a0bdb9da247aa44c8197eefb4362bc13235f92fc5",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/middleware/cookieGuard.ts": "94948bc76851a78d3ec592168c9790436a323186bc38cf1ec5da6c60408fbcd3",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/middleware/cors.ts": "39d44cd5b0c175abbd06c643a93c5c107bac931b09a002117d88b3b01b35fb6e",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/middleware/logger.ts": "933ca6b2bf52c37ae99d05e428ba76fbbabd4bf516e25e3b9a2a27e8575f8ec5",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/middleware/responseTimer.ts": "f00a47346f714b92ad6b7b798b1096326e8273adcd659f404562c28954745e58",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/middleware/roleGuard.ts": "27ce6af689f59a6cdceedc6881271b2d36b45d3bfefbc8fd825d1ccf5a733172",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/middleware/tokenGuard.ts": "4962367f74a5f1ca6cb02f8a18a5f89404f85e49e174b3a20ad6cf0943df998e",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/pages/404.ts": "68f3a9285e078a9fe198d1bf7f74d92725f1903603ed7f415eb874064cd58236",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/admin.ts": "c36146836eed88dc5bf43de024feea6f0f83039165e9b1373213dbb4315552cf",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/auth.ts": "3a03a905789b36b42ff3eacf71b5c0288fd1496b5d7079e234f88f36332032e6",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/categories.ts": "bfa7626a6b5f83a70b07bb1eb8e8aecf0027fc0c138bb69d7b52318c3b600d7e",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/dashboard.ts": "da76088bff62d4c7253ea8cc70f1cf10799a5cefc74f5c2e9b44177389b4689e",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/discounts.ts": "578d815745408d41a8d3d629651792867abfdb6d562868c7a79f4d0cf7254393",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/inventories.ts": "49b390477bfa26e26115da8f5c3b4d8f37ec20924d084290c4a80a010be98a8b",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/oauth.ts": "1376303e49ecdc3f16d4050f05c3c583840b107d92387da6db5e4a7b28e67463",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/orders.ts": "ac3b661f56627ac213de7dd8cacd235201b03562cb468dab29d2a92a8fddcaa1",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/prices.ts": "1a4e41e4c37842e275a4dc942e6f5ec10214162c205ccf3b25698c00b66591f3",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/products.ts": "2e026cc4daa4a73509197185213c4a855d65b06da0d3e080ae529c0f3b3bca66",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/settings.ts": "d1e60f4944545717df66267f0263e41039f50ce8e9d47ec7ac4e5387889369f1",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/shops.ts": "270d06ad7a83b8da9414077cb5336c0d7c3ebfd1203cb04db609da70636a89db",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/tokens.ts": "f54e429f70db8f1f967d9e51512a55e8dbf65dad611a73d3cb3675b6e4fe0c1d",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/users.ts": "cbb046f8b32219c19ba751d453d335d5eadad2d21679b7aded4b6168faa7ef6b",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/admin/warehouses.ts": "fca5a4155638ec1d26736b794fca1d5ddeb6860e916760cdcacd1bb48c789a2c",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/api/api.ts": "c6bcfb46302f8ff5fbb5a41cf36406ffcb712c37e83f8bb7780aef176ac5da2a",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/api/carts.ts": "fa55f5460139d875046973fbb4416c88b8b7d2781937e50bbac6311de262ab9a",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/api/categories.ts": "a647af6521b77ffe5ea1ab13eb0e30ab970025a7e3167a1d87edefc0aadee72b",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/api/products.ts": "214db757b328f9081cec1af4f5425e69c1206a1b83d0bde0f0864e5af527399d",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/api/users.ts": "e344b7b2a8d14dc8abfa6c4a7e5a5fabc6de8ab3ca2b06db1d578c8afce68228",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/utils/ping.ts": "137b6c6c4ddd01e919024bcb254005ea47dcfd10f384146665187af9438bbaec",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/routes/utils/utils.ts": "a0389bc425faefda0365a6c1067b8999397e19374ce0c5f2f38a7d37f3866de6",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/adminService/mod.ts": "5a36267f6b9c1a5518cdb23b3644653f9df0d1c21a2db40318ddbc818cbeab46",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/cacheService/mod.ts": "1cd6f59117b5e9940131b59168497d1990d0176db6a8c61a43c82ff77c92b534",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/cartService/mod.ts": "2656f7d1d11548f3a3816cde2f8664c12af47dc04dd163a7dc0b157e7cc74cdd",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/categoryLinkService/mod.ts": "2111b93d4bda95232fc0beca963b911d66878d741113fa7d96bc4bc1275e3e94",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/categoryService/mod.ts": "1dfb440bd3ea8b51c731fd5df965f60bc84faa204eff4fe39e5269a2859fd9c3",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/discountService/mod.ts": "fcfdea5ac70cdc68d5d726f2980d351d54505dcf37607b706c5d9abf554170cc",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/adminService.ts": "75433da0a8e8e8cc562a3cbb38f45c50ddd24d56df94bf5a286351eaa1fff3ca",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/cacheService.ts": "7593f6f78face4105e5558206be9f9c28fbb4dd9ed12f54e83a58658cd9cbcb3",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/cartService.ts": "6694b4737e5be01b38480ac3d57602e7829131810dc07f0585d740d40c963152",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/categoryLinkService.ts": "5b08c7740de0b5dbc2d9356471b2dc818c376ddb3a85c1b127498272e7cee53d",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/categoryService.ts": "741e186b1d994da5a89d2f612a1c0cef27e0ccab4e2bb11881eea323beba7950",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/discountService.ts": "bd3baef36b4d5be166b4aa3a7d0fe7042a46a762014daf1f66cc48f404b7054f",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/inventoryService.ts": "81831c5f6f5172fbea1f06da05a88803f88ea78d296e414f35df0a012043e73c",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/notificationService.ts": "7bd683b9818470fec690c07e78f8840c87ae04bcaafe9ced2dd9b122f3202c58",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/oauthService.ts": "9efe6e4c918848f281cd5e82c3e85c788721fe3ef9581cf28222bcddc6acc751",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/orderService.ts": "16a0e791ce8fe949b354f72b02604c61fa6cf6925c42bbe41cabdee1234b5490",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/organizationLinkService.ts": "1780d6a68176193ec4b5131b947e8696e472f8d7e04c8ed3e33de4027c632f65",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/organizationService.ts": "85b18cc3e248402313edbd1881997a9beaaad80986e3785349d117f2c2cab13b",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/paymentService.ts": "b18c5e5c42a9b3b309450020966c7c9b57f3d082d47e5a258167d45f57747608",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/pluginService.ts": "0cbd61cb294bbff01d823e6beb34cafa0e6c18cc050d52c99ea93015df1dbd16",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/priceCalculatorService.ts": "222a6d24c120cdd1d4e50b03aacb97e4fd8204c9819ce79bc51a54a9092636db",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/priceService.ts": "288d6450c48604809b749f63923da1ad4a9108ca04761532c36643c6ae87d84c",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/productService.ts": "a2ee2498b9f9478ac74fc27e6340ed84a44d3c63ba0c3c4af992f68a9c0cccc8",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/searchService.ts": "2346708a1e45bfb3da187edc184f642a309f4febc44d470bd42ec54d575f9200",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/settingsService.ts": "1a677665b0cb32bb9a3637c5a911510b0791b24a3db68788422054e6c3d2ad7e",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/shopLinkService.ts": "31268a1c404225940c05037ea6f4c486302733b3ff71a7ae1f992511c8ea6010",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/shopService.ts": "99b462aee6a91a9e6c83b5ba7c79ee0456906a039f048e3320735a7caf6afccf",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/tokenService.ts": "c45203e47a982c00879f8b4ad77ccaada547e7ba0c41b82999a81e05a6cfc43e",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/userService.ts": "f1e6b3648f9924513e30f482c31efac6806191bafa0f06095913ddb8bb1fbda5",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/interfaces/warehouseService.ts": "5ad016d8e994fddfbf4949498e007ca7099945c9c9a812f3b9e8d1917e22c88f",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/inventoryService/mod.ts": "992c3b1efdbfb7238fdac15ef243a47c1dda14824496dfc50b68c59542f9be3c",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/mod.ts": "5ec962567d36a0fc50e7d53eaaa936107faecf1b3323de6b4c44994da2f213dd",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/notificationService/mod.ts": "c94b0d75f1461d9c093809111289e691c618821b568a119917b37f4c52623b6b",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/oauthService/mod.ts": "d00f080ff815b06e7d9d3670fe80464bb0fb55bee48adbb75be8b4a400e3598a",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/orderService/mod.ts": "91a0f65d060ef8afbcccd7f93d6198694fcda14dc6be981355ee308fdfa2b088",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/organizationLinkService/mod.ts": "96c2d8900bfd49598065cb390a4c4ac229c21c3b32fc915304d5737e80e9f02f",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/organizationService/mod.ts": "eb247ce1eebbc1d7e992628c7dbfb9ba2b43b887ce521524ae12449e81f7fe40",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/paymentService/mod.ts": "9480cbed35c7c779d91802dd701cc8d14cd5c7fda98713fd6a64351a0089d434",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/pluginService/mod.ts": "42cd40fa70c9017842ebb09a186dbff93d6bc9a05c886d43bbbb998b45d769f4",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/priceCalculatorService/mod.ts": "d6eb4f7772ba25c410c593ee6e711fc569de173d001a3425e99970a3dcb5e6f1",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/priceService/mod.ts": "103940ebf661eaba7d88b654aa9fd12b0830bef57d5b2d30383251bc2376d762",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/productService/mod.ts": "94333f3bcbc77d563eb47248bbf5f49732c8f5799f9419b66c834938caec44f6",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/searchService/mod.ts": "2dd8a1f17f88a32086bb038072f0ac9cd8816848b8dfc9b84eceade692b59867",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/settingsService/mod.ts": "73ecfa0f98f9b82285589b8c8c7e0c198b09c3d4d4da0a2abf9bceb760760bca",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/shopLinkService/mod.ts": "b65297f2ff6bb03db8ebf9ec98a4a04833319ac87b86efb9264a2a0e5a2dea6d",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/shopService/mod.ts": "777e80808a5a56a761f6fd76f0a90c802fe0aea0cfa9d763c4621b2f67174d56",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/tokenService/mod.ts": "29c26c7be07d8ffa529768d39e6d95a111bb231d9480a20af8d0ed786e0f42f5",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/userService/mod.ts": "2f23b6c7a84928252f7234794925c4130f475f6b7a828c8b0b35f09968fdacfd",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/services/warehouseService/mod.ts": "7296a2f7a9f5d0a1dd37e7e7d79867ea8e859939c1c8a2e5a03c9ca261134c61",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/utils/errors.ts": "8d6a6cb2a04c9a7fe457e47baa54401d7ac56900a38b646334b74f66623d2271",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/utils/events.ts": "9e49d7e5aa8c93bab05fbefeed86e21d8ea44a99d0446eef4540591eda9891a3",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/utils/schema.ts": "89649eb256ce474ce336427f15f52aba2f997bd30e1ee7f632119f51a89aa52a",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/utils/types.ts": "9e5d3024de2161c733e4b6a0faf5cbacd90e7bc80f5f2de16a88761fbf86df44",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/utils/utils.ts": "f7160c40350034d05a0ed12a203b5dba20d871cd3a0f735e54ba5a0bdc49eb60",
+    "https://raw.githubusercontent.com/turquoze/turquoze/f7eb693f1cc8ae37c6e2762793f06df19a63ad1e/src/utils/validator.ts": "680c6acacd58991d001cf7bc9fd012f84fcea2b10b03b81c8d11302b5575d4e9"
   }
 }
